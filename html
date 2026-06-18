@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Congrès 2026 — CFTC Paris UD 75</title>
+  <meta name="description" content="Congrès de l'Union Départementale CFTC de Paris — 26 juin 2026. Ordre du jour, documents, calendrier et informations pratiques." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Favicon inline SVG -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23003B8E'/><text y='.9em' font-size='60' x='50%' text-anchor='middle' fill='white' font-weight='900'>C</text></svg>" />
+</head>
+<body>
+
+  <!-- ======== NAVBAR ======== -->
+  <nav class="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="nav-container">
+      <a href="#accueil" class="nav-logo" aria-label="CFTC Paris UD75 - Accueil">
+        <div class="nav-logo-mark" aria-hidden="true">CFTC</div>
+        <div class="nav-logo-text">
+          <strong>UD 75 Paris</strong>
+          <span>Congrès 2026</span>
+        </div>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#accueil"    class="nav-link active">Accueil</a></li>
+        <li><a href="#calendrier" class="nav-link">Calendrier</a></li>
+        <li><a href="#ordre-du-jour" class="nav-link">Ordre du jour</a></li>
+        <li><a href="#documents"  class="nav-link">Documents</a></li>
+        <li><a href="#participants" class="nav-link">Participants</a></li>
+        <li><a href="#contact"    class="nav-link nav-cta">Contact</a></li>
+      </ul>
+
+      <button class="nav-burger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ======== HERO ======== -->
+  <section class="hero" id="accueil" aria-label="Présentation du congrès">
+    <div class="hero-bg-shapes" aria-hidden="true">
+      <div class="hero-shape hero-shape-1"></div>
+      <div class="hero-shape hero-shape-2"></div>
+      <div class="hero-shape hero-shape-3"></div>
+    </div>
+
+    <div class="hero-container">
+      <!-- Left: title & info -->
+      <div class="hero-content">
+        <div class="hero-badge" aria-label="Événement officiel">
+          <span class="hero-badge-dot" aria-hidden="true"></span>
+          Événement officiel · 2026
+        </div>
+
+        <h1 class="hero-title">
+          Congrès de l'
+          <span class="highlight">Union Départementale</span>
+          CFTC Paris UD&nbsp;75
+        </h1>
+
+        <p class="hero-subtitle">
+          Vendredi <strong>26 juin 2026</strong> — de 10h00 à 17h00
+        </p>
+
+        <div class="hero-meta" role="list">
+          <div class="hero-meta-item" role="listitem">
+            <div class="hero-meta-icon" aria-hidden="true">📍</div>
+            <span>Maison des syndicats, 26 rue Francis Combe — 75000 Paris</span>
+          </div>
+          <div class="hero-meta-item" role="listitem">
+            <div class="hero-meta-icon" aria-hidden="true">🕙</div>
+            <span>10h00 → Congrès Extraordinaire &amp; Congrès Ordinaire</span>
+          </div>
+          <div class="hero-meta-item" role="listitem">
+            <div class="hero-meta-icon" aria-hidden="true">✉️</div>
+            <span>Contact : <a href="mailto:congresud75@cftc.fr" style="color:rgba(255,255,255,0.9); text-decoration:underline;">congresud75@cftc.fr</a></span>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#ordre-du-jour" class="btn btn-primary">
+            📋 Voir l'ordre du jour
+          </a>
+          <a href="#documents" class="btn btn-outline">
+            📄 Télécharger les documents
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: countdown -->
+      <div class="countdown-card" role="timer" aria-label="Compte à rebours avant le congrès">
+        <div class="countdown-label">
+          <span aria-hidden="true">⏱</span> Compte à rebours
+        </div>
+        <div class="countdown-grid" aria-live="polite">
+          <div class="countdown-unit">
+            <span class="countdown-num" id="countdown-days">--</span>
+            <span class="countdown-unit-label">Jours</span>
+          </div>
+          <div class="countdown-unit">
+            <span class="countdown-num" id="countdown-hours">--</span>
+            <span class="countdown-unit-label">Heures</span>
+          </div>
+          <div class="countdown-unit">
+            <span class="countdown-num" id="countdown-mins">--</span>
+            <span class="countdown-unit-label">Minutes</span>
+          </div>
+          <div class="countdown-unit">
+            <span class="countdown-num" id="countdown-secs">--</span>
+            <span class="countdown-unit-label">Secondes</span>
+          </div>
+        </div>
+
+        <ul class="event-info-list" role="list">
+          <li class="event-info-item">
+            <span class="icon" aria-hidden="true">📌</span>
+            <span>Congrès Extraordinaire : modification des Statuts</span>
+          </li>
+          <li class="event-info-item">
+            <span class="icon" aria-hidden="true">🗳️</span>
+            <span>Congrès Ordinaire : rapport d'activité, élection du Conseil départemental</span>
+          </li>
+          <li class="event-info-item">
+            <span class="icon" aria-hidden="true">🤝</span>
+            <span>Intervention du représentant confédéral et de l'URIF</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== CALENDRIER ======== -->
+  <section class="section section-alt" id="calendrier" aria-labelledby="calendrier-title">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow" aria-hidden="true">📅 Dates clés</div>
+        <h2 class="section-title" id="calendrier-title">Calendrier du Congrès</h2>
+        <p class="section-desc">Retrouvez toutes les étapes importantes menant au congrès du 26 juin 2026.</p>
+      </div>
+
+      <div class="timeline" role="list">
+        <div class="timeline-item done animate-in" role="listitem">
+          <div class="timeline-dot" aria-label="Étape réalisée">✓</div>
+          <div class="timeline-content">
+            <div class="timeline-date">26 février 2026</div>
+            <div class="timeline-title">Convocations &amp; ordre du jour envoyés</div>
+            <div class="timeline-detail">Communication de la date du congrès à toutes les structures.</div>
+            <span class="timeline-tag tag-done">Réalisé</span>
+          </div>
+        </div>
+
+        <div class="timeline-item done animate-in" role="listitem">
+          <div class="timeline-dot" aria-label="Étape réalisée">✓</div>
+          <div class="timeline-content">
+            <div class="timeline-date">26 avril 2026</div>
+            <div class="timeline-title">Arrêté des parts mensuelles</div>
+            <div class="timeline-detail">Calcul du nombre de délégués et des droits de vote.</div>
+            <span class="timeline-tag tag-done">Réalisé</span>
+          </div>
+        </div>
+
+        <div class="timeline-item done animate-in" role="listitem">
+          <div class="timeline-dot" aria-label="Étape réalisée">✓</div>
+          <div class="timeline-content">
+            <div class="timeline-date">27 avril 2026</div>
+            <div class="timeline-title">Envoi des documents du congrès</div>
+            <div class="timeline-detail">Diffusion de tous les documents nécessaires et du lien vers ce site.</div>
+            <span class="timeline-tag tag-done">Réalisé</span>
+          </div>
+        </div>
+
+        <div class="timeline-item done animate-in" role="listitem">
+          <div class="timeline-dot" aria-label="Étape réalisée">✓</div>
+          <div class="timeline-content">
+            <div class="timeline-date">26 mai 2026</div>
+            <div class="timeline-title">Clôture des candidatures &amp; mandats</div>
+            <div class="timeline-detail">Date limite de réception des mandats des délégués et des candidatures au Conseil.</div>
+            <span class="timeline-tag tag-done">Réalisé</span>
+          </div>
+        </div>
+
+        <div class="timeline-item done animate-in" role="listitem">
+          <div class="timeline-dot" aria-label="Étape réalisée">✓</div>
+          <div class="timeline-content">
+            <div class="timeline-date">10 juin 2026</div>
+            <div class="timeline-title">Clôture des demandes d'intervention</div>
+            <div class="timeline-detail">Date limite de réception des demandes d'intervention et des délégations de pouvoirs.</div>
+            <span class="timeline-tag tag-done">Réalisé</span>
+          </div>
+        </div>
+
+        <div class="timeline-item done animate-in" role="listitem">
+          <div class="timeline-dot" aria-label="Étape réalisée">✓</div>
+          <div class="timeline-content">
+            <div class="timeline-date">12 juin 2026</div>
+            <div class="timeline-title">Communication des candidatures</div>
+            <div class="timeline-detail">Publication officielle des candidatures et des désignations au Conseil départemental.</div>
+            <span class="timeline-tag tag-done">Réalisé</span>
+          </div>
+        </div>
+
+        <div class="timeline-item current animate-in" role="listitem">
+          <div class="timeline-dot" aria-label="Prochaine étape">🗳️</div>
+          <div class="timeline-content">
+            <div class="timeline-date">26 juin 2026</div>
+            <div class="timeline-title">🎯 Jour du Congrès</div>
+            <div class="timeline-detail">Congrès Extraordinaire (statuts) puis Congrès Ordinaire (rapport, élection, motion d'orientation). 10h00 → 17h00.</div>
+            <span class="timeline-tag tag-current">Prochain</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== ORDRE DU JOUR ======== -->
+  <section class="section" id="ordre-du-jour" aria-labelledby="odj-title">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow" aria-hidden="true">📋 Programme</div>
+        <h2 class="section-title" id="odj-title">Ordre du Jour</h2>
+        <p class="section-desc">Le congrès se tient en deux sessions : Extraordinaire puis Ordinaire.</p>
+      </div>
+
+      <div class="agenda-grid">
+        <!-- Congrès Extraordinaire -->
+        <div class="agenda-card animate-in" aria-label="Congrès Extraordinaire">
+          <div class="agenda-card-header extraordinary">
+            <div class="agenda-card-icon" aria-hidden="true">⚡</div>
+            <div>
+              <div class="agenda-card-title">Congrès Extraordinaire</div>
+              <div class="agenda-card-sub">Modification des Statuts</div>
+            </div>
+          </div>
+          <ol class="agenda-items" role="list">
+            <li class="agenda-item">
+              <span class="agenda-num" aria-hidden="true">1</span>
+              <span class="agenda-text">Ouverture du Congrès extraordinaire et présentation des enjeux</span>
+            </li>
+            <li class="agenda-item">
+              <span class="agenda-num" aria-hidden="true">2</span>
+              <span class="agenda-text">Adoption de l'ordre du jour du Congrès</span>
+            </li>
+            <li class="agenda-item">
+              <span class="agenda-num" aria-hidden="true">3</span>
+              <span class="agenda-text">Élection de la Commission de vérification des mandats</span>
+            </li>
+            <li class="agenda-item">
+              <span class="agenda-num" aria-hidden="true">4</span>
+              <span class="agenda-text">Rapport de la Commission des mandats</span>
+            </li>
+            <li class="agenda-item">
+              <span class="agenda-num" aria-hidden="true">5</span>
+              <span class="agenda-text">Présentation du projet de modification des Statuts</span>
+            </li>
+            <li class="agenda-item">
+              <span class="agenda-num" aria-hidden="true">6</span>
+              <span class="agenda-text">Étude et vote des amendements éventuels</span>
+            </li>
+            <li class="agenda-item">
+              <span class="agenda-num" aria-hidden="true">7</span>
+              <span class="agenda-text">Vote sur l'adoption des nouveaux Statuts</span>
+            </li>
+            <li class="agenda-item">
+              <span class="agenda-num" aria-hidden="true">8</span>
+              <span class="agenda-text">Intervention Macif</span>
+            </li>
+            <li class="agenda-item">
+              <span class="agenda-num" aria-hidden="true">9</span>
+              <span class="agenda-text">Clôture du Congrès extraordinaire</span>
+            </li>
+          </ol>
+        </div>
+
+        <!-- Congrès Ordinaire -->
+        <div class="agenda-card animate-in" aria-label="Congrès Ordinaire">
+          <div class="agenda-card-header ordinary">
+            <div class="agenda-card-icon" aria-hidden="true">🏛️</div>
+            <div>
+              <div class="agenda-card-title">Congrès Ordinaire</div>
+              <div class="agenda-card-sub">Rapport, Élection, Motion</div>
+            </div>
+          </div>
+          <ol class="agenda-items" role="list">
+            <li class="agenda-item">
+              <span class="agenda-num" aria-hidden="true">1</span>
+              <span class="agenda-text">Ouverture du Congrès Ordinaire</span>
+            </li>
+            <li class="agenda-item">
+              <span class="agenda-num" aria-hidden="true">2</span>
+              <span class="agenda-text">Introduction par l'URIF</span>
+            </li>
+            <li class="agenda-item">
+              <span class="agenda-num" aria-hidden="true">3</span>
+              <span class="agenda-text">Adoption de l'ordre du jour du Congrès Ordinaire</span>
+            </li>
+            <li class="agenda-item">
+              <span class="agenda-num" aria-hidden="true">4</span>
+              <span class="agenda-text">Rapport de la Commission de vérification des mandats</span>
+            </li>
+            <li class="agenda-item">
+              <span class="agenda-num" aria-hidden="true">5</span>
+              <span class="agenda-text">Présentation du rapport d'activité et vote</span>
+            </li>
+            <li class="agenda-item">
+              <span class="agenda-num" aria-hidden="true">6</span>
+              <span class="agenda-text">Présentation du rapport financier et vote</span>
+            </li>
+            <li class="agenda-item">
+              <span class="agenda-num" aria-hidden="true">7</span>
+              <span class="agenda-text">Présentation des candidats au Conseil départemental</span>
+            </li>
+            <li class="agenda-item">
+              <span class="agenda-num" aria-hidden="true">8</span>
+              <span class="agenda-text">Élection du Conseil</span>
+            </li>
+            <li class="agenda-item">
+              <span class="agenda-num" aria-hidden="true">9</span>
+              <span class="agenda-text">Vote pour la nouvelle Commission de vérification des comptes</span>
+            </li>
+            <li class="agenda-item">
+              <span class="agenda-num" aria-hidden="true">10</span>
+              <span class="agenda-text">Réunion du nouveau Conseil : élection des Dirigeants et des membres du Bureau</span>
+            </li>
+            <li class="agenda-item">
+              <span class="agenda-num" aria-hidden="true">11</span>
+              <span class="agenda-text">Proclamation des résultats</span>
+            </li>
+            <li class="agenda-item">
+              <span class="agenda-num" aria-hidden="true">12</span>
+              <span class="agenda-text">Présentation de la Motion d'orientation et vote</span>
+            </li>
+            <li class="agenda-item">
+              <span class="agenda-num" aria-hidden="true">13</span>
+              <span class="agenda-text">Intervention du représentant confédéral</span>
+            </li>
+            <li class="agenda-item">
+              <span class="agenda-num" aria-hidden="true">14</span>
+              <span class="agenda-text">Clôture du Congrès Ordinaire</span>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== DOCUMENTS ======== -->
+  <section class="section section-alt" id="documents" aria-labelledby="docs-title">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow" aria-hidden="true">📄 Ressources</div>
+        <h2 class="section-title" id="docs-title">Documents à télécharger</h2>
+        <p class="section-desc">Tous les documents nécessaires à votre préparation et participation au congrès.</p>
+      </div>
+
+      <div class="docs-grid">
+        <a href="documents/congres-convocation.pdf" class="doc-card animate-in" download aria-label="Télécharger la convocation au congrès (PDF)">
+          <div class="doc-icon" aria-hidden="true">📑</div>
+          <div class="doc-info">
+            <div class="doc-name">Convocation au Congrès</div>
+            <div class="doc-type">PDF · Document officiel</div>
+          </div>
+          <span class="doc-arrow" aria-hidden="true">↓</span>
+        </a>
+
+        <a href="documents/congres-RI.pdf" class="doc-card animate-in" download aria-label="Télécharger le règlement intérieur (PDF)">
+          <div class="doc-icon" aria-hidden="true">📋</div>
+          <div class="doc-info">
+            <div class="doc-name">Règlement Intérieur du Congrès</div>
+            <div class="doc-type">PDF · Règlement</div>
+          </div>
+          <span class="doc-arrow" aria-hidden="true">↓</span>
+        </a>
+
+        <a href="documents/statuts-actuels.pdf" class="doc-card animate-in" download aria-label="Télécharger les statuts applicables (PDF)">
+          <div class="doc-icon" aria-hidden="true">📜</div>
+          <div class="doc-info">
+            <div class="doc-name">Statuts applicables</div>
+            <div class="doc-type">PDF · Statuts en vigueur</div>
+          </div>
+          <span class="doc-arrow" aria-hidden="true">↓</span>
+        </a>
+
+        <a href="documents/projet-statuts.pdf" class="doc-card animate-in" download aria-label="Télécharger le projet de nouveaux statuts (PDF)">
+          <div class="doc-icon" aria-hidden="true">📝</div>
+          <div class="doc-info">
+            <div class="doc-name">Projet de nouveaux Statuts</div>
+            <div class="doc-type">PDF · Proposition soumise au vote</div>
+          </div>
+          <span class="doc-arrow" aria-hidden="true">↓</span>
+        </a>
+
+        <a href="documents/rapport-activite.pdf" class="doc-card animate-in" download aria-label="Télécharger le rapport d'activité (PDF)">
+          <div class="doc-icon" aria-hidden="true">📊</div>
+          <div class="doc-info">
+            <div class="doc-name">Rapport d'activité</div>
+            <div class="doc-type">PDF · Bilan de mandature</div>
+          </div>
+          <span class="doc-arrow" aria-hidden="true">↓</span>
+        </a>
+
+        <a href="documents/rapport-financier.pdf" class="doc-card animate-in" download aria-label="Télécharger le rapport financier (PDF)">
+          <div class="doc-icon" aria-hidden="true">💰</div>
+          <div class="doc-info">
+            <div class="doc-name">Rapport financier</div>
+            <div class="doc-type">PDF · Comptes de l'UD</div>
+          </div>
+          <span class="doc-arrow" aria-hidden="true">↓</span>
+        </a>
+
+        <a href="documents/motion-orientation.pdf" class="doc-card animate-in" download aria-label="Télécharger la motion d'orientation (PDF)">
+          <div class="doc-icon" aria-hidden="true">🎯</div>
+          <div class="doc-info">
+            <div class="doc-name">Motion d'orientation</div>
+            <div class="doc-type">PDF · Projet stratégique</div>
+          </div>
+          <span class="doc-arrow" aria-hidden="true">↓</span>
+        </a>
+
+        <a href="documents/inscription-congres.docx" class="doc-card animate-in" download aria-label="Télécharger le formulaire d'inscription (DOCX)">
+          <div class="doc-icon" style="background:#DBEAFE;" aria-hidden="true">📌</div>
+          <div class="doc-info">
+            <div class="doc-name">Inscription &amp; mandats des délégués</div>
+            <div class="doc-type">DOCX · Formulaire</div>
+          </div>
+          <span class="doc-arrow" aria-hidden="true">↓</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== PARTICIPANTS ======== -->
+  <section class="section" id="participants" aria-labelledby="participants-title">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow" aria-hidden="true">👥 Présences</div>
+        <h2 class="section-title" id="participants-title">Participants &amp; Invités</h2>
+        <p class="section-desc">Les représentants mandatés ainsi que les personnalités invitées à ce congrès.</p>
+      </div>
+
+      <div class="participants-wrapper">
+        <!-- Participants -->
+        <div class="participants-group animate-in">
+          <div class="group-title">Participants officiels</div>
+
+          <div class="person-card">
+            <div class="person-avatar" aria-hidden="true">UD</div>
+            <div>
+              <div class="person-name">Délégués mandatés</div>
+              <div class="person-role">Représentants dûment mandatés des Syndicats de l'Union Départementale CFTC de Paris</div>
+            </div>
+          </div>
+
+          <div class="person-card">
+            <div class="person-avatar orange" aria-hidden="true">ML</div>
+            <div>
+              <div class="person-name">Manuel LECOMTE</div>
+              <div class="person-role">Tuteur de l'UD75</div>
+              <div class="person-org">Trésorier Confédéral · CFTC</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Invités -->
+        <div class="participants-group animate-in">
+          <div class="group-title">Invités</div>
+
+          <div class="person-card">
+            <div class="person-avatar" aria-hidden="true">IH</div>
+            <div>
+              <div class="person-name">Imane HARRAOUI</div>
+              <div class="person-role">Secrétaire Générale Adjointe</div>
+              <div class="person-org">Confédération CFTC</div>
+            </div>
+          </div>
+
+          <div class="person-card">
+            <div class="person-avatar orange" aria-hidden="true">LD</div>
+            <div>
+              <div class="person-name">Louis DUVAUX</div>
+              <div class="person-role">Président</div>
+              <div class="person-org">Union Régionale Île-de-France (URIF)</div>
+            </div>
+          </div>
+
+          <div class="person-card">
+            <div class="person-avatar" aria-hidden="true">SD</div>
+            <div>
+              <div class="person-name">Sandra DEWELLE</div>
+              <div class="person-role">Secrétaire Générale</div>
+              <div class="person-org">Union Régionale Île-de-France (URIF)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== CONTACT ======== -->
+  <section class="section section-alt" id="contact" aria-labelledby="contact-title">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow" aria-hidden="true">✉️ Nous écrire</div>
+        <h2 class="section-title" id="contact-title">Contact Organisation</h2>
+        <p class="section-desc">Une question sur le congrès ? Contactez l'équipe d'organisation.</p>
+      </div>
+
+      <div class="contact-wrapper">
+        <!-- Infos -->
+        <div class="contact-info-block">
+          <div class="contact-info-item animate-in">
+            <div class="contact-info-icon" aria-hidden="true">✉️</div>
+            <div class="contact-info-text">
+              <strong>Email</strong>
+              <span><a href="mailto:congresud75@cftc.fr" style="color:var(--blue-mid);">congresud75@cftc.fr</a></span>
+            </div>
+          </div>
+          <div class="contact-info-item animate-in">
+            <div class="contact-info-icon" aria-hidden="true">📍</div>
+            <div class="contact-info-text">
+              <strong>Adresse</strong>
+              <span>Maison des syndicats<br />26 rue Francis Combe<br />75000 Paris</span>
+            </div>
+          </div>
+          <div class="contact-info-item animate-in">
+            <div class="contact-info-icon" aria-hidden="true">🕙</div>
+            <div class="contact-info-text">
+              <strong>Horaires du congrès</strong>
+              <span>Vendredi 26 juin 2026<br />10h00 – 17h00</span>
+            </div>
+          </div>
+          <div class="contact-info-item animate-in">
+            <div class="contact-info-icon" aria-hidden="true">🌐</div>
+            <div class="contact-info-text">
+              <strong>Site confédéral</strong>
+              <span><a href="https://www.cftc.fr" target="_blank" rel="noopener" style="color:var(--blue-mid);">www.cftc.fr</a></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formulaire -->
+        <div class="contact-form animate-in">
+          <form id="contact-form" novalidate aria-label="Formulaire de contact">
+            <div class="form-group">
+              <label class="form-label" for="name">Nom complet *</label>
+              <input class="form-input" type="text" id="name" name="name" placeholder="Prénom Nom" required autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Adresse email *</label>
+              <input class="form-input" type="email" id="email" name="email" placeholder="prenom.nom@exemple.fr" required autocomplete="email" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="syndicat">Syndicat / Organisation</label>
+              <input class="form-input" type="text" id="syndicat" name="syndicat" placeholder="Votre syndicat ou organisation" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="sujet">Sujet *</label>
+              <select class="form-select" id="sujet" name="sujet" required>
+                <option value="">Choisir un sujet…</option>
+                <option>Inscription / Mandat de délégué</option>
+                <option>Candidature au Conseil</option>
+                <option>Documents du congrès</option>
+                <option>Information générale</option>
+                <option>Autre</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="message">Message *</label>
+              <textarea class="form-textarea" id="message" name="message" placeholder="Votre message…" required></textarea>
+            </div>
+            <button type="submit" class="form-submit">
+              Envoyer le message ✉️
+            </button>
+          </form>
+
+          <div id="form-success" class="form-success" role="alert" aria-live="polite">
+            <div style="font-size:2.5rem; margin-bottom:0.75rem;">✅</div>
+            <div style="font-size:1.1rem; margin-bottom:0.5rem;">Message envoyé !</div>
+            <div style="font-size:0.875rem; color:var(--gray-text); font-weight:400;">
+              L'équipe d'organisation vous répondra dans les meilleurs délais à l'adresse indiquée.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== FOOTER ======== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand-mark" aria-hidden="true">CFTC</div>
+          <p class="footer-desc">
+            Union Départementale CFTC de Paris (UD 75) — Syndicat constructif, ancré dans les valeurs du dialogue social et de la défense des droits des travailleurs.
+          </p>
+        </div>
+        <div>
+          <div class="footer-col-title">Navigation</div>
+          <nav aria-label="Navigation pied de page">
+            <a href="#accueil"      class="footer-link">Accueil</a>
+            <a href="#calendrier"   class="footer-link">Calendrier</a>
+            <a href="#ordre-du-jour" class="footer-link">Ordre du jour</a>
+            <a href="#documents"    class="footer-link">Documents</a>
+            <a href="#participants" class="footer-link">Participants</a>
+            <a href="#contact"      class="footer-link">Contact</a>
+          </nav>
+        </div>
+        <div>
+          <div class="footer-col-title">Ressources</div>
+          <a href="https://www.cftc.fr" class="footer-link" target="_blank" rel="noopener">CFTC nationale</a>
+          <a href="#documents" class="footer-link">Téléchargements</a>
+          <a href="mailto:congresud75@cftc.fr" class="footer-link">congresud75@cftc.fr</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 CFTC Paris <span class="footer-orange">UD 75</span> — Congrès Union Départementale</span>
+        <span>Vendredi 26 juin 2026 · 10h00 – 17h00</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
