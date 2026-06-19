@@ -4,567 +4,759 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Congrès 2026 — CFTC Paris UD 75</title>
-  <meta name="description" content="Congrès de l'Union Départementale CFTC de Paris — 26 juin 2026. Ordre du jour, documents, calendrier et informations pratiques." />
-
-  <!-- Fonts -->
+  <meta name="description" content="Congrès de l'Union Départementale CFTC de Paris — 26 juin 2026." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- Polices officielles CFTC : Oswald (titres) + Lato (corps) -->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <style>
+    /* =============================================
+       CFTC PARIS UD 75 — CHARTE OFFICIELLE 2018
+       Couleurs : #1D71B8 | #302878 | #01B2C0 | #951B81
+       Typo : Oswald (titres) / Lato (corps)
+    ============================================= */
 
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="css/style.css" />
+    :root {
+      --blue:       #1D71B8;   /* Bleu officiel CFTC */
+      --dark:       #302878;   /* Bleu foncé / violet officiel */
+      --cyan:       #01B2C0;   /* Cyan officiel */
+      --violet:     #951B81;   /* Violet officiel */
+      --white:      #FFFFFF;
+      --off-white:  #F6F8FB;
+      --light-blue: #E5EFF8;
+      --gray:       #F0F2F6;
+      --gray-border:#D4DCE8;
+      --gray-text:  #697080;
+      --ink:        #1A1F36;
+      --shadow-sm:  0 2px 10px rgba(29,113,184,0.08);
+      --shadow-md:  0 6px 28px rgba(29,113,184,0.13);
+      --shadow-lg:  0 16px 56px rgba(48,40,120,0.16);
+      --r:          6px;
+      --r-lg:       12px;
+      --ease:       all 0.28s cubic-bezier(0.4,0,0.2,1);
+    }
 
-  <!-- Favicon inline SVG -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23003B8E'/><text y='.9em' font-size='60' x='50%' text-anchor='middle' fill='white' font-weight='900'>C</text></svg>" />
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Lato', Arial, sans-serif; color: var(--ink); background: var(--white); line-height: 1.65; overflow-x: hidden; }
+
+    h1,h2,h3,h4,h5 { font-family: 'Oswald', Arial, sans-serif; line-height: 1.15; font-weight: 600; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    img { display: block; max-width: 100%; }
+
+    /* =============================================
+       TOPBAR
+    ============================================= */
+    .topbar {
+      background: var(--dark);
+      color: rgba(255,255,255,0.65);
+      font-size: 0.78rem;
+      font-family: 'Lato', sans-serif;
+      padding: 0.4rem 1.5rem;
+    }
+    .topbar-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .topbar a { color: rgba(255,255,255,0.65); transition: var(--ease); }
+    .topbar a:hover { color: white; }
+    .topbar-right { display: flex; gap: 1.5rem; }
+
+    /* =============================================
+       NAVBAR
+    ============================================= */
+    .navbar {
+      position: sticky; top: 0; z-index: 999;
+      background: var(--white);
+      border-bottom: 4px solid var(--blue);
+      box-shadow: var(--shadow-sm);
+      transition: var(--ease);
+    }
+    .navbar.raised { box-shadow: var(--shadow-md); }
+
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      padding: 0 1.5rem; height: 74px;
+      display: flex; align-items: center; gap: 2rem;
+    }
+
+    /* Logo placeholder — déposer logo-cftc.svg dans img/ */
+    .nav-logo { display: flex; align-items: center; gap: 1rem; flex-shrink: 0; }
+    .logo-img { height: 50px; width: auto; }
+    .logo-placeholder {
+      height: 50px; width: 50px;
+      border-radius: 50%;
+      background: var(--blue);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.75rem; font-weight: 700;
+      color: white; text-align: center;
+      line-height: 1.1; padding: 0.25rem;
+    }
+    .nav-sep { width: 1px; height: 38px; background: var(--gray-border); }
+    .nav-title {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 600; font-size: 1rem;
+      color: var(--dark); line-height: 1.25;
+    }
+    .nav-title span { display: block; font-family: 'Lato', sans-serif; font-size: 0.72rem; font-weight: 400; color: var(--gray-text); }
+
+    .nav-links { display: flex; align-items: center; gap: 0.15rem; margin-left: auto; }
+    .nav-link {
+      font-family: 'Lato', sans-serif; font-weight: 700;
+      font-size: 0.82rem; letter-spacing: 0.03em;
+      color: var(--gray-text); padding: 0.5rem 0.875rem;
+      border-radius: var(--r); transition: var(--ease); white-space: nowrap;
+    }
+    .nav-link:hover, .nav-link.active { color: var(--blue); background: var(--light-blue); }
+    .nav-cta {
+      margin-left: 0.5rem; background: var(--blue); color: white !important;
+      border-radius: 50px; padding: 0.55rem 1.25rem;
+    }
+    .nav-cta:hover { background: var(--dark); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(29,113,184,0.4); }
+
+    .burger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; margin-left: auto; padding: 0.5rem; }
+    .burger span { display: block; width: 22px; height: 2px; background: var(--blue); border-radius: 2px; transition: var(--ease); }
+
+    /* =============================================
+       HERO
+    ============================================= */
+    .hero {
+      position: relative; min-height: 90vh;
+      display: flex; align-items: center; overflow: hidden;
+      background: var(--dark);
+    }
+    /* Formes géométriques CFTC */
+    .hero-shapes { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+    .hs {
+      position: absolute; border-radius: 50%;
+      opacity: 0.08;
+    }
+    .hs-1 { width: 700px; height: 700px; background: var(--blue); top: -200px; right: -150px; }
+    .hs-2 { width: 450px; height: 450px; background: var(--cyan); bottom: -100px; left: -80px; }
+    .hs-3 { width: 220px; height: 220px; background: var(--violet); top: 35%; right: 30%; opacity: 0.12; }
+    /* Bande décorative diagonale */
+    .hero-band {
+      position: absolute; bottom: 0; left: 0; right: 0; height: 7px;
+      background: linear-gradient(90deg, var(--blue) 0%, var(--cyan) 50%, var(--violet) 100%);
+    }
+
+    .hero-inner {
+      position: relative; z-index: 1;
+      max-width: 1200px; margin: 0 auto;
+      padding: 5rem 1.5rem;
+      display: grid; grid-template-columns: 1fr 400px;
+      gap: 4rem; align-items: center; width: 100%;
+    }
+
+    .hero-label {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-family: 'Lato', sans-serif; font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--cyan); border: 1px solid rgba(1,178,192,0.3);
+      padding: 0.35rem 0.9rem; border-radius: 50px; margin-bottom: 1.5rem;
+    }
+    .hero-label-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--cyan); animation: blink 2s ease-in-out infinite; }
+    @keyframes blink { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:.5;transform:scale(1.4);} }
+
+    .hero-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 700; color: white;
+      text-transform: uppercase; line-height: 1.05;
+      margin-bottom: 0.5rem;
+    }
+    .hero-title .line-blue { color: var(--cyan); }
+    .hero-title .line-small {
+      font-size: 0.38em; font-weight: 400;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.12em; display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Barre soulignement style CFTC */
+    .cftc-underline {
+      width: 56px; height: 5px;
+      background: var(--cyan);
+      border-radius: 2px; margin: 1.25rem 0 1.75rem;
+    }
+
+    .hero-date-block {
+      display: inline-flex; align-items: stretch; gap: 0;
+      background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+      border-left: 5px solid var(--cyan); border-radius: var(--r);
+      overflow: hidden; margin-bottom: 2rem;
+    }
+    .hero-date-main {
+      padding: 0.9rem 1.5rem;
+      font-family: 'Oswald', sans-serif; font-size: 1.3rem; font-weight: 600;
+      color: white; letter-spacing: 0.04em;
+    }
+    .hero-date-sep { width: 1px; background: rgba(255,255,255,0.12); }
+    .hero-date-detail {
+      padding: 0.9rem 1.25rem;
+      font-size: 0.82rem; color: rgba(255,255,255,0.6);
+      display: flex; align-items: center;
+    }
+
+    .hero-meta { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 2.25rem; }
+    .hero-meta-item { display: flex; align-items: center; gap: 0.75rem; color: rgba(255,255,255,0.75); font-size: 0.9rem; }
+    .hmi { width: 30px; height: 30px; background: rgba(29,113,184,0.3); border-radius: var(--r); display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0; }
+
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.75rem; border-radius: var(--r); font-family: 'Oswald', sans-serif; font-size: 0.95rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; border: none; transition: var(--ease); }
+    .btn-blue { background: var(--blue); color: white; }
+    .btn-blue:hover { background: #1560a0; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(29,113,184,0.45); }
+    .btn-outline { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.3); }
+    .btn-outline:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); }
+
+    /* Compte à rebours */
+    .cd-box {
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--r-lg); padding: 2rem; color: white;
+    }
+    .cd-head {
+      font-family: 'Lato', sans-serif; font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(255,255,255,0.5); margin-bottom: 1.5rem;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .cd-head::before { content:''; flex:1; height:1px; background:rgba(255,255,255,0.1); }
+    .cd-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 0.6rem; margin-bottom: 2rem; }
+    .cd-unit { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--r); padding: 1rem 0.25rem; text-align: center; }
+    .cd-num { display: block; font-family: 'Oswald', sans-serif; font-size: 2.2rem; font-weight: 700; line-height: 1; margin-bottom: 0.25rem; }
+    .cd-lbl { font-family: 'Lato', sans-serif; font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.45); }
+    .cd-sep { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin-bottom: 1.5rem; }
+    .cd-info { display: flex; flex-direction: column; gap: 0.75rem; }
+    .cd-info-row { display: flex; gap: 0.7rem; font-size: 0.82rem; color: rgba(255,255,255,0.65); line-height: 1.45; align-items: flex-start; }
+    .cd-info-row .ic { font-size: 0.95rem; margin-top: 1px; flex-shrink: 0; }
+
+    /* =============================================
+       SECTIONS
+    ============================================= */
+    .section { padding: 5.5rem 1.5rem; }
+    .section-alt { background: var(--off-white); }
+    .container { max-width: 1200px; margin: 0 auto; }
+
+    .section-head { text-align: center; margin-bottom: 3.5rem; }
+    .eyebrow {
+      display: inline-block;
+      font-family: 'Lato', sans-serif; font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--blue); margin-bottom: 0.75rem;
+      position: relative; padding-bottom: 0.5rem;
+    }
+    .eyebrow::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 40px; height: 3px; background: var(--cyan); border-radius: 2px; }
+
+    .section-title { font-family: 'Oswald', sans-serif; font-size: clamp(1.7rem, 3vw, 2.3rem); font-weight: 700; color: var(--dark); text-transform: uppercase; margin-bottom: 0.75rem; letter-spacing: 0.03em; }
+    .section-sub { color: var(--gray-text); max-width: 520px; margin: 0 auto; font-size: 0.95rem; }
+
+    .section-divider { height: 5px; background: linear-gradient(90deg, var(--blue) 0%, var(--cyan) 60%, var(--violet) 100%); }
+
+    /* =============================================
+       CHIFFRES CLÉS
+    ============================================= */
+    .stats-band { background: var(--blue); padding: 2.5rem 1.5rem; }
+    .stats-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; text-align: center; }
+    .stat-item { color: white; }
+    .stat-num { font-family: 'Oswald', sans-serif; font-size: 2.6rem; font-weight: 700; color: var(--cyan); line-height: 1; margin-bottom: 0.25rem; }
+    .stat-label { font-size: 0.82rem; color: rgba(255,255,255,0.75); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
+
+    /* =============================================
+       PRÉSENTATION VIDÉO
+    ============================================= */
+    .pres-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center; }
+    .video-wrap { position: relative; border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow-lg); background: var(--dark); aspect-ratio: 16/9; }
+    .video-wrap iframe { width: 100%; height: 100%; border: none; display: block; }
+    .video-placeholder {
+      position: absolute; inset: 0; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      background: linear-gradient(135deg, var(--dark) 0%, var(--blue) 100%);
+      color: white; cursor: pointer; transition: var(--ease);
+    }
+    .video-placeholder:hover { background: linear-gradient(135deg, var(--blue) 0%, var(--cyan) 100%); }
+    .play-btn {
+      width: 70px; height: 70px; border-radius: 50%;
+      background: var(--cyan); display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem; margin-bottom: 1rem;
+      box-shadow: 0 8px 32px rgba(1,178,192,0.5); transition: var(--ease);
+    }
+    .video-placeholder:hover .play-btn { transform: scale(1.1); }
+    .video-placeholder p { font-family: 'Oswald', sans-serif; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.85; }
+
+    .pres-features { display: flex; flex-direction: column; gap: 1.75rem; }
+    .pres-feat { display: flex; gap: 1rem; align-items: flex-start; }
+    .pres-feat-icon {
+      width: 50px; height: 50px; flex-shrink: 0;
+      background: var(--light-blue); border-radius: var(--r);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; color: var(--blue);
+      border-bottom: 3px solid var(--blue);
+    }
+    .pres-feat h4 { font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 600; color: var(--dark); margin-bottom: 0.25rem; text-transform: uppercase; letter-spacing: 0.04em; }
+    .pres-feat p { font-size: 0.85rem; color: var(--gray-text); line-height: 1.6; }
+
+    /* =============================================
+       CALENDRIER
+    ============================================= */
+    .tl { max-width: 800px; margin: 0 auto; position: relative; }
+    .tl::before { content: ''; position: absolute; left: 24px; top: 24px; bottom: 24px; width: 2px; background: linear-gradient(to bottom, var(--blue), var(--cyan)); }
+
+    .tl-row { display: flex; gap: 1.5rem; margin-bottom: 1.5rem; align-items: flex-start; }
+    .tl-dot {
+      width: 50px; height: 50px; border-radius: 50%; flex-shrink: 0; z-index: 1;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Oswald', sans-serif; font-size: 0.85rem; font-weight: 700;
+      background: white; box-shadow: var(--shadow-sm);
+    }
+    .tl-dot.done { border: 3px solid var(--blue); color: var(--blue); }
+    .tl-dot.next { border: 3px solid var(--cyan); color: var(--cyan); background: #E5FAFB; box-shadow: 0 0 0 6px rgba(1,178,192,0.12); }
+
+    .tl-card { flex: 1; background: white; border-radius: var(--r-lg); padding: 1.1rem 1.5rem; border: 1px solid var(--gray-border); box-shadow: var(--shadow-sm); transition: var(--ease); }
+    .tl-card:hover { transform: translateX(4px); box-shadow: var(--shadow-md); }
+    .tl-card.next-card { border-left: 4px solid var(--cyan); }
+
+    .tl-date { font-family: 'Lato', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.15rem; }
+    .tl-name { font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 600; color: var(--dark); margin-bottom: 0.2rem; }
+    .tl-desc { font-size: 0.83rem; color: var(--gray-text); }
+    .badge { display: inline-block; margin-top: 0.5rem; padding: 0.18rem 0.65rem; border-radius: 50px; font-family: 'Lato', sans-serif; font-size: 0.67rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; }
+    .b-done { background: #DCFCE7; color: #15803D; }
+    .b-next { background: #E5FAFB; color: #008999; }
+
+    /* =============================================
+       ORDRE DU JOUR
+    ============================================= */
+    .agenda-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .agenda-card { border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow-md); background: white; border: 1px solid var(--gray-border); }
+    .agenda-hd { padding: 1.5rem 1.75rem; display: flex; align-items: center; gap: 1rem; }
+    .agenda-hd.blue { background: var(--blue); }
+    .agenda-hd.dark { background: var(--dark); }
+    .agenda-hd-icon { width: 46px; height: 46px; border-radius: var(--r); background: rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+    .agenda-hd-title { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 1.1rem; color: white; text-transform: uppercase; letter-spacing: 0.04em; }
+    .agenda-hd-sub { font-size: 0.78rem; color: rgba(255,255,255,0.7); margin-top: 0.15rem; }
+    .agenda-body { padding: 1.25rem 1.5rem; }
+    .a-item { display: flex; align-items: flex-start; gap: 0.875rem; padding: 0.6rem 0.75rem; border-radius: var(--r); transition: var(--ease); }
+    .a-item:hover { background: var(--off-white); }
+    .a-n { font-family: 'Oswald', sans-serif; font-size: 0.72rem; font-weight: 700; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .a-n.bn { background: var(--light-blue); color: var(--blue); }
+    .a-n.dn { background: #ECEAF8; color: var(--dark); }
+    .a-text { font-size: 0.875rem; color: var(--ink); line-height: 1.5; }
+
+    /* =============================================
+       DOCUMENTS
+    ============================================= */
+    .docs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(265px,1fr)); gap: 1rem; }
+    .doc-link { display: flex; align-items: center; gap: 1rem; padding: 1rem 1.25rem; background: white; border: 1px solid var(--gray-border); border-radius: var(--r-lg); transition: var(--ease); color: var(--ink); }
+    .doc-link:hover { border-color: var(--blue); box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .doc-link:hover .doc-arrow { opacity: 1; transform: translateX(3px); }
+    .d-icon { width: 46px; height: 46px; border-radius: var(--r); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
+    .d-icon.red { background: #FEE2E2; }
+    .d-icon.blue { background: var(--light-blue); }
+    .d-icon.green { background: #DCFCE7; }
+    .d-icon.cyan { background: #E5FAFB; }
+    .d-name { font-family: 'Oswald', sans-serif; font-size: 0.9rem; font-weight: 600; color: var(--dark); margin-bottom: 0.15rem; }
+    .d-meta { font-size: 0.75rem; color: var(--gray-text); font-family: 'Lato', sans-serif; }
+    .doc-arrow { margin-left: auto; color: var(--blue); font-size: 1.1rem; opacity: 0; transition: var(--ease); }
+
+    /* =============================================
+       PARTICIPANTS
+    ============================================= */
+    .p-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .p-group { background: white; border-radius: var(--r-lg); padding: 2rem; border: 1px solid var(--gray-border); box-shadow: var(--shadow-sm); }
+    .p-group-hd {
+      font-family: 'Oswald', sans-serif; font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue);
+      padding-bottom: 0.875rem; margin-bottom: 1.25rem;
+      border-bottom: 3px solid var(--cyan);
+    }
+    .person { display: flex; align-items: center; gap: 0.875rem; padding: 0.75rem 0; border-bottom: 1px solid var(--gray); }
+    .person:last-child { border-bottom: none; }
+    .avatar { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 0.85rem; color: white; flex-shrink: 0; }
+    .av-b { background: linear-gradient(135deg, var(--blue), var(--dark)); }
+    .av-c { background: linear-gradient(135deg, var(--cyan), #009ba8); }
+    .p-name { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 0.95rem; color: var(--dark); }
+    .p-role { font-size: 0.78rem; color: var(--gray-text); }
+    .p-org { font-size: 0.75rem; color: var(--blue); font-weight: 700; font-family: 'Lato', sans-serif; }
+
+    /* =============================================
+       CONTACT
+    ============================================= */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: start; }
+    .c-info-list { display: flex; flex-direction: column; gap: 1.5rem; }
+    .c-info { display: flex; gap: 1rem; align-items: flex-start; }
+    .c-icon { width: 50px; height: 50px; background: var(--light-blue); border-radius: var(--r); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; border-bottom: 3px solid var(--blue); }
+    .c-label { font-family: 'Oswald', sans-serif; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-text); margin-bottom: 0.2rem; }
+    .c-val { font-size: 0.95rem; color: var(--ink); }
+    .c-val a { color: var(--blue); }
+
+    .form-box { background: white; border-radius: var(--r-lg); padding: 2.25rem; border: 1px solid var(--gray-border); box-shadow: var(--shadow-md); }
+    .form-title { font-family: 'Oswald', sans-serif; font-size: 1.2rem; font-weight: 700; color: var(--dark); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 1.5rem; }
+    .form-title::after { content:''; display:block; width:40px; height:4px; background:var(--cyan); margin-top:0.5rem; border-radius:2px; }
+    .f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .field { margin-bottom: 1rem; }
+    .field label { display: block; font-family: 'Lato', sans-serif; font-size: 0.75rem; font-weight: 700; color: var(--ink); margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.04em; }
+    .field input, .field select, .field textarea { width: 100%; padding: 0.75rem 1rem; border: 1.5px solid var(--gray-border); border-radius: var(--r); font-family: 'Lato', sans-serif; font-size: 0.9rem; color: var(--ink); background: var(--off-white); outline: none; transition: var(--ease); }
+    .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--blue); background: white; box-shadow: 0 0 0 3px rgba(29,113,184,0.1); }
+    .field textarea { resize: vertical; min-height: 100px; }
+    .form-submit { width: 100%; padding: 0.9rem; background: var(--blue); color: white; border: none; border-radius: var(--r); font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; transition: var(--ease); }
+    .form-submit:hover { background: var(--dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(29,113,184,0.35); }
+    #form-success { display: none; text-align: center; padding: 2rem; }
+    #form-success .ico { font-size: 3rem; margin-bottom: 0.75rem; }
+    #form-success h3 { font-family: 'Oswald', sans-serif; font-size: 1.2rem; font-weight: 700; color: #15803D; text-transform: uppercase; margin-bottom: 0.5rem; }
+    #form-success p { font-size: 0.85rem; color: var(--gray-text); }
+
+    /* =============================================
+       FOOTER
+    ============================================= */
+    .footer { background: var(--dark); color: white; padding: 3.5rem 1.5rem 1.75rem; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 1.5rem; }
+
+    /* Logo footer — version blanche */
+    .footer-logo { display: flex; align-items: center; gap: 0.875rem; margin-bottom: 1.25rem; }
+    .footer-logo-img { height: 44px; filter: brightness(0) invert(1); }
+    .footer-logo-placeholder { width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; font-family: 'Oswald', sans-serif; font-size: 0.72rem; color: white; text-align: center; line-height: 1.1; }
+    .footer-logo-text { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 0.95rem; color: white; line-height: 1.3; }
+    .footer-logo-text span { font-family: 'Lato', sans-serif; font-weight: 300; font-size: 0.72rem; color: rgba(255,255,255,0.5); display: block; }
+
+    .footer-desc { font-size: 0.83rem; color: rgba(255,255,255,0.45); line-height: 1.7; max-width: 310px; }
+    .footer-baseline { font-family: 'Oswald', sans-serif; font-size: 0.85rem; font-weight: 500; color: var(--cyan); margin-top: 0.75rem; letter-spacing: 0.04em; font-style: italic; }
+
+    .footer-col-title { font-family: 'Oswald', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 1rem; }
+    .f-link { display: block; font-size: 0.875rem; color: rgba(255,255,255,0.6); padding: 0.3rem 0; transition: var(--ease); }
+    .f-link:hover { color: var(--cyan); transform: translateX(3px); }
+
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem; color: rgba(255,255,255,0.3); flex-wrap: wrap; gap: 0.5rem; }
+    .footer-bottom a { color: rgba(255,255,255,0.45); }
+    .fc { color: var(--cyan); }
+
+    /* =============================================
+       ANIMATIONS
+    ============================================= */
+    .fade { opacity: 0; transform: translateY(26px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade.in { opacity: 1; transform: translateY(0); }
+
+    /* Toast */
+    #toast { position: fixed; bottom: 2rem; right: 2rem; background: var(--dark); color: white; padding: 1rem 1.5rem; border-radius: var(--r-lg); font-family: 'Lato', sans-serif; font-size: 0.875rem; font-weight: 700; box-shadow: var(--shadow-lg); z-index: 9999; transform: translateY(20px); opacity: 0; transition: var(--ease); border-left: 5px solid var(--cyan); }
+    #toast.show { transform: translateY(0); opacity: 1; }
+
+    /* =============================================
+       RESPONSIVE
+    ============================================= */
+    @media (max-width: 960px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .cd-box { display: none; }
+      .pres-grid, .agenda-grid, .p-grid, .contact-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: repeat(2,1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .burger { display: flex; }
+      .nav-links { display: none; }
+      .nav-links.open { display: flex; flex-direction: column; position: fixed; top: 74px; left: 0; right: 0; background: white; padding: 1rem; border-top: 4px solid var(--blue); box-shadow: var(--shadow-lg); gap: 0.25rem; z-index: 998; }
+      .nav-link { padding: 0.75rem 1rem; }
+      .f-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .docs-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .topbar-left { display: none; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- ======== NAVBAR ======== -->
-  <nav class="navbar" role="navigation" aria-label="Navigation principale">
-    <div class="nav-container">
-      <a href="#accueil" class="nav-logo" aria-label="CFTC Paris UD75 - Accueil">
-        <div class="nav-logo-mark" aria-hidden="true">CFTC</div>
-        <div class="nav-logo-text">
-          <strong>UD 75 Paris</strong>
-          <span>Congrès 2026</span>
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <span class="topbar-left">Union Départementale CFTC de Paris — UD 75 · Nous sommes syndicalistes et constructifs</span>
+      <div class="topbar-right">
+        <a href="https://www.cftc.fr" target="_blank" rel="noopener">cftc.fr</a>
+        <a href="https://www.cftc-idf.fr" target="_blank" rel="noopener">CFTC IDF</a>
+        <a href="mailto:congresud75@cftc.fr">congresud75@cftc.fr</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#accueil" class="nav-logo">
+        <!--
+          LOGO : Déposer votre fichier logo dans img/logo-cftc.svg
+          Exemple : <img class="logo-img" src="img/logo-cftc.svg" alt="CFTC" />
+          Le placeholder ci-dessous sera remplacé automatiquement si l'image existe.
+        -->
+        <img class="logo-img" src="img/logo-cftc.svg" alt="CFTC — La Vie à Défendre"
+             onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='flex';" />
+        <div class="logo-placeholder" id="logo-fallback" style="display:none;">Syndicat<br/>CFTC</div>
+        <div class="nav-sep"></div>
+        <div class="nav-title">
+          CFTC Paris UD 75
+          <span>Congrès 2026 · Union Départementale</span>
         </div>
       </a>
 
-      <ul class="nav-links" role="list">
-        <li><a href="#accueil"    class="nav-link active">Accueil</a></li>
-        <li><a href="#calendrier" class="nav-link">Calendrier</a></li>
-        <li><a href="#ordre-du-jour" class="nav-link">Ordre du jour</a></li>
-        <li><a href="#documents"  class="nav-link">Documents</a></li>
-        <li><a href="#participants" class="nav-link">Participants</a></li>
-        <li><a href="#contact"    class="nav-link nav-cta">Contact</a></li>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#accueil"        class="nav-link active">Accueil</a></li>
+        <li><a href="#presentation"   class="nav-link">Présentation</a></li>
+        <li><a href="#calendrier"     class="nav-link">Calendrier</a></li>
+        <li><a href="#ordre-du-jour"  class="nav-link">Ordre du jour</a></li>
+        <li><a href="#documents"      class="nav-link">Documents</a></li>
+        <li><a href="#participants"   class="nav-link">Participants</a></li>
+        <li><a href="#contact"        class="nav-link nav-cta">Contact</a></li>
       </ul>
-
-      <button class="nav-burger" aria-label="Menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
 
-  <!-- ======== HERO ======== -->
-  <section class="hero" id="accueil" aria-label="Présentation du congrès">
-    <div class="hero-bg-shapes" aria-hidden="true">
-      <div class="hero-shape hero-shape-1"></div>
-      <div class="hero-shape hero-shape-2"></div>
-      <div class="hero-shape hero-shape-3"></div>
-    </div>
-
-    <div class="hero-container">
-      <!-- Left: title & info -->
-      <div class="hero-content">
-        <div class="hero-badge" aria-label="Événement officiel">
-          <span class="hero-badge-dot" aria-hidden="true"></span>
-          Événement officiel · 2026
-        </div>
-
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="accueil">
+    <div class="hero-shapes"><div class="hs hs-1"></div><div class="hs hs-2"></div><div class="hs hs-3"></div></div>
+    <div class="hero-band"></div>
+    <div class="hero-inner">
+      <div>
+        <div class="hero-label"><span class="hero-label-dot"></span>Événement officiel · CFTC Paris UD 75</div>
         <h1 class="hero-title">
-          Congrès de l'
-          <span class="highlight">Union Départementale</span>
-          CFTC Paris UD&nbsp;75
+          <span class="line-small">Congrès 2026</span>
+          Union<br />
+          <span class="line-blue">Départementale</span><br />
+          Paris UD&nbsp;75
         </h1>
-
-        <p class="hero-subtitle">
-          Vendredi <strong>26 juin 2026</strong> — de 10h00 à 17h00
-        </p>
-
-        <div class="hero-meta" role="list">
-          <div class="hero-meta-item" role="listitem">
-            <div class="hero-meta-icon" aria-hidden="true">📍</div>
-            <span>Maison des syndicats, 26 rue Francis Combe — 75000 Paris</span>
-          </div>
-          <div class="hero-meta-item" role="listitem">
-            <div class="hero-meta-icon" aria-hidden="true">🕙</div>
-            <span>10h00 → Congrès Extraordinaire &amp; Congrès Ordinaire</span>
-          </div>
-          <div class="hero-meta-item" role="listitem">
-            <div class="hero-meta-icon" aria-hidden="true">✉️</div>
-            <span>Contact : <a href="mailto:congresud75@cftc.fr" style="color:rgba(255,255,255,0.9); text-decoration:underline;">congresud75@cftc.fr</a></span>
-          </div>
+        <div class="cftc-underline"></div>
+        <div class="hero-date-block">
+          <div class="hero-date-main">Vendredi 26 juin 2026</div>
+          <div class="hero-date-sep"></div>
+          <div class="hero-date-detail">10h00 – 17h00 · Maison des syndicats, Paris</div>
         </div>
-
-        <div class="hero-actions">
-          <a href="#ordre-du-jour" class="btn btn-primary">
-            📋 Voir l'ordre du jour
-          </a>
-          <a href="#documents" class="btn btn-outline">
-            📄 Télécharger les documents
-          </a>
+        <div class="hero-meta">
+          <div class="hero-meta-item"><span class="hmi">📍</span>26 rue Francis Combe — 75000 Paris</div>
+          <div class="hero-meta-item"><span class="hmi">⚡</span>10h00 → Congrès Extraordinaire — Modification des Statuts</div>
+          <div class="hero-meta-item"><span class="hmi">🏛️</span>Après-midi → Congrès Ordinaire — Rapport, Élection, Motion</div>
+          <div class="hero-meta-item"><span class="hmi">✉️</span><a href="mailto:congresud75@cftc.fr" style="color:rgba(255,255,255,0.75);">congresud75@cftc.fr</a></div>
+        </div>
+        <div class="hero-btns">
+          <a href="#ordre-du-jour" class="btn btn-blue">📋 Ordre du jour</a>
+          <a href="#documents"     class="btn btn-outline">📄 Documents</a>
         </div>
       </div>
 
-      <!-- Right: countdown -->
-      <div class="countdown-card" role="timer" aria-label="Compte à rebours avant le congrès">
-        <div class="countdown-label">
-          <span aria-hidden="true">⏱</span> Compte à rebours
+      <!-- Countdown -->
+      <div class="cd-box">
+        <div class="cd-head">Compte à rebours</div>
+        <div class="cd-grid">
+          <div class="cd-unit"><span class="cd-num" id="cd-d">--</span><span class="cd-lbl">Jours</span></div>
+          <div class="cd-unit"><span class="cd-num" id="cd-h">--</span><span class="cd-lbl">Heures</span></div>
+          <div class="cd-unit"><span class="cd-num" id="cd-m">--</span><span class="cd-lbl">Min</span></div>
+          <div class="cd-unit"><span class="cd-num" id="cd-s">--</span><span class="cd-lbl">Sec</span></div>
         </div>
-        <div class="countdown-grid" aria-live="polite">
-          <div class="countdown-unit">
-            <span class="countdown-num" id="countdown-days">--</span>
-            <span class="countdown-unit-label">Jours</span>
-          </div>
-          <div class="countdown-unit">
-            <span class="countdown-num" id="countdown-hours">--</span>
-            <span class="countdown-unit-label">Heures</span>
-          </div>
-          <div class="countdown-unit">
-            <span class="countdown-num" id="countdown-mins">--</span>
-            <span class="countdown-unit-label">Minutes</span>
-          </div>
-          <div class="countdown-unit">
-            <span class="countdown-num" id="countdown-secs">--</span>
-            <span class="countdown-unit-label">Secondes</span>
-          </div>
+        <hr class="cd-sep" />
+        <div class="cd-info">
+          <div class="cd-info-row"><span class="ic">📌</span>Congrès Extraordinaire : modification des Statuts de l'UD 75</div>
+          <div class="cd-info-row"><span class="ic">🗳️</span>Congrès Ordinaire : rapport d'activité, élection du Conseil</div>
+          <div class="cd-info-row"><span class="ic">🤝</span>Interventions URIF et représentant confédéral</div>
+          <div class="cd-info-row"><span class="ic">📍</span>Maison des syndicats — 26 rue Francis Combe, Paris</div>
         </div>
-
-        <ul class="event-info-list" role="list">
-          <li class="event-info-item">
-            <span class="icon" aria-hidden="true">📌</span>
-            <span>Congrès Extraordinaire : modification des Statuts</span>
-          </li>
-          <li class="event-info-item">
-            <span class="icon" aria-hidden="true">🗳️</span>
-            <span>Congrès Ordinaire : rapport d'activité, élection du Conseil départemental</span>
-          </li>
-          <li class="event-info-item">
-            <span class="icon" aria-hidden="true">🤝</span>
-            <span>Intervention du représentant confédéral et de l'URIF</span>
-          </li>
-        </ul>
       </div>
     </div>
   </section>
 
-  <!-- ======== CALENDRIER ======== -->
-  <section class="section section-alt" id="calendrier" aria-labelledby="calendrier-title">
+  <!-- Bande gradient CFTC -->
+  <div class="section-divider"></div>
+
+  <!-- ===== CHIFFRES CLÉS ===== -->
+  <div class="stats-band">
+    <div class="stats-grid">
+      <div class="stat-item"><div class="stat-num">140 000</div><div class="stat-label">Adhérents CFTC</div></div>
+      <div class="stat-item"><div class="stat-num">650</div><div class="stat-label">Syndicats affiliés</div></div>
+      <div class="stat-item"><div class="stat-num">75</div><div class="stat-label">Paris — UD 75</div></div>
+      <div class="stat-item"><div class="stat-num">100+</div><div class="stat-label">Ans d'existence</div></div>
+    </div>
+  </div>
+
+  <!-- ===== PRÉSENTATION VIDÉO ===== -->
+  <section class="section" id="presentation">
     <div class="container">
-      <div class="section-header">
-        <div class="section-eyebrow" aria-hidden="true">📅 Dates clés</div>
-        <h2 class="section-title" id="calendrier-title">Calendrier du Congrès</h2>
-        <p class="section-desc">Retrouvez toutes les étapes importantes menant au congrès du 26 juin 2026.</p>
+      <div class="section-head">
+        <div class="eyebrow">Présentation</div>
+        <h2 class="section-title">La CFTC Paris UD 75 en action</h2>
+        <p class="section-sub">Nous sommes syndicalistes et constructifs — découvrez l'engagement de l'Union Départementale de Paris.</p>
       </div>
-
-      <div class="timeline" role="list">
-        <div class="timeline-item done animate-in" role="listitem">
-          <div class="timeline-dot" aria-label="Étape réalisée">✓</div>
-          <div class="timeline-content">
-            <div class="timeline-date">26 février 2026</div>
-            <div class="timeline-title">Convocations &amp; ordre du jour envoyés</div>
-            <div class="timeline-detail">Communication de la date du congrès à toutes les structures.</div>
-            <span class="timeline-tag tag-done">Réalisé</span>
+      <div class="pres-grid fade">
+        <div class="video-wrap" id="video-container">
+          <div class="video-placeholder" id="video-placeholder" onclick="loadVideo()">
+            <div class="play-btn">▶</div>
+            <p>Vidéo de présentation</p>
           </div>
         </div>
-
-        <div class="timeline-item done animate-in" role="listitem">
-          <div class="timeline-dot" aria-label="Étape réalisée">✓</div>
-          <div class="timeline-content">
-            <div class="timeline-date">26 avril 2026</div>
-            <div class="timeline-title">Arrêté des parts mensuelles</div>
-            <div class="timeline-detail">Calcul du nombre de délégués et des droits de vote.</div>
-            <span class="timeline-tag tag-done">Réalisé</span>
+        <div class="pres-features">
+          <div class="pres-feat">
+            <div class="pres-feat-icon">⚖️</div>
+            <div><h4>Défense des droits</h4><p>L'UD 75 représente et défend les droits des travailleurs parisiens dans toutes les branches professionnelles.</p></div>
           </div>
-        </div>
-
-        <div class="timeline-item done animate-in" role="listitem">
-          <div class="timeline-dot" aria-label="Étape réalisée">✓</div>
-          <div class="timeline-content">
-            <div class="timeline-date">27 avril 2026</div>
-            <div class="timeline-title">Envoi des documents du congrès</div>
-            <div class="timeline-detail">Diffusion de tous les documents nécessaires et du lien vers ce site.</div>
-            <span class="timeline-tag tag-done">Réalisé</span>
+          <div class="pres-feat">
+            <div class="pres-feat-icon">🤝</div>
+            <div><h4>Dialogue social</h4><p>Ancrée dans les valeurs chrétiennes et humanistes, la CFTC prône un syndicalisme constructif et responsable.</p></div>
           </div>
-        </div>
-
-        <div class="timeline-item done animate-in" role="listitem">
-          <div class="timeline-dot" aria-label="Étape réalisée">✓</div>
-          <div class="timeline-content">
-            <div class="timeline-date">26 mai 2026</div>
-            <div class="timeline-title">Clôture des candidatures &amp; mandats</div>
-            <div class="timeline-detail">Date limite de réception des mandats des délégués et des candidatures au Conseil.</div>
-            <span class="timeline-tag tag-done">Réalisé</span>
+          <div class="pres-feat">
+            <div class="pres-feat-icon">📚</div>
+            <div><h4>Formation syndicale</h4><p>Conseil juridique, formations exclusives et soutien dans l'action syndicale au quotidien.</p></div>
           </div>
-        </div>
-
-        <div class="timeline-item done animate-in" role="listitem">
-          <div class="timeline-dot" aria-label="Étape réalisée">✓</div>
-          <div class="timeline-content">
-            <div class="timeline-date">10 juin 2026</div>
-            <div class="timeline-title">Clôture des demandes d'intervention</div>
-            <div class="timeline-detail">Date limite de réception des demandes d'intervention et des délégations de pouvoirs.</div>
-            <span class="timeline-tag tag-done">Réalisé</span>
-          </div>
-        </div>
-
-        <div class="timeline-item done animate-in" role="listitem">
-          <div class="timeline-dot" aria-label="Étape réalisée">✓</div>
-          <div class="timeline-content">
-            <div class="timeline-date">12 juin 2026</div>
-            <div class="timeline-title">Communication des candidatures</div>
-            <div class="timeline-detail">Publication officielle des candidatures et des désignations au Conseil départemental.</div>
-            <span class="timeline-tag tag-done">Réalisé</span>
-          </div>
-        </div>
-
-        <div class="timeline-item current animate-in" role="listitem">
-          <div class="timeline-dot" aria-label="Prochaine étape">🗳️</div>
-          <div class="timeline-content">
-            <div class="timeline-date">26 juin 2026</div>
-            <div class="timeline-title">🎯 Jour du Congrès</div>
-            <div class="timeline-detail">Congrès Extraordinaire (statuts) puis Congrès Ordinaire (rapport, élection, motion d'orientation). 10h00 → 17h00.</div>
-            <span class="timeline-tag tag-current">Prochain</span>
+          <div class="pres-feat">
+            <div class="pres-feat-icon">🗳️</div>
+            <div><h4>Représentativité</h4><p>La CFTC Paris est présente dans toutes les instances de représentation du personnel en Île-de-France.</p></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ======== ORDRE DU JOUR ======== -->
-  <section class="section" id="ordre-du-jour" aria-labelledby="odj-title">
+  <!-- ===== CALENDRIER ===== -->
+  <section class="section section-alt" id="calendrier">
     <div class="container">
-      <div class="section-header">
-        <div class="section-eyebrow" aria-hidden="true">📋 Programme</div>
-        <h2 class="section-title" id="odj-title">Ordre du Jour</h2>
-        <p class="section-desc">Le congrès se tient en deux sessions : Extraordinaire puis Ordinaire.</p>
+      <div class="section-head">
+        <div class="eyebrow">Dates clés</div>
+        <h2 class="section-title">Calendrier du Congrès</h2>
+        <p class="section-sub">Toutes les étapes menant au congrès de l'Union Départementale CFTC de Paris.</p>
       </div>
+      <div class="tl">
+        <div class="tl-row fade"><div class="tl-dot done">✓</div><div class="tl-card"><div class="tl-date">26 février 2026</div><div class="tl-name">Convocations &amp; ordre du jour</div><div class="tl-desc">Communication de la date du congrès à toutes les structures syndicales.</div><span class="badge b-done">Réalisé</span></div></div>
+        <div class="tl-row fade"><div class="tl-dot done">✓</div><div class="tl-card"><div class="tl-date">26 avril 2026</div><div class="tl-name">Arrêté des parts mensuelles</div><div class="tl-desc">Calcul du nombre de délégués et des droits de vote par syndicat.</div><span class="badge b-done">Réalisé</span></div></div>
+        <div class="tl-row fade"><div class="tl-dot done">✓</div><div class="tl-card"><div class="tl-date">27 avril 2026</div><div class="tl-name">Envoi des documents du congrès</div><div class="tl-desc">Diffusion des documents nécessaires et du lien vers ce site.</div><span class="badge b-done">Réalisé</span></div></div>
+        <div class="tl-row fade"><div class="tl-dot done">✓</div><div class="tl-card"><div class="tl-date">26 mai 2026</div><div class="tl-name">Clôture des candidatures &amp; mandats</div><div class="tl-desc">Date limite de réception des mandats de délégués et candidatures au Conseil.</div><span class="badge b-done">Réalisé</span></div></div>
+        <div class="tl-row fade"><div class="tl-dot done">✓</div><div class="tl-card"><div class="tl-date">10 juin 2026</div><div class="tl-name">Clôture des demandes d'intervention</div><div class="tl-desc">Date limite des demandes d'intervention et délégations de pouvoir.</div><span class="badge b-done">Réalisé</span></div></div>
+        <div class="tl-row fade"><div class="tl-dot done">✓</div><div class="tl-card"><div class="tl-date">12 juin 2026</div><div class="tl-name">Communication des candidatures</div><div class="tl-desc">Publication officielle des candidatures au Conseil départemental.</div><span class="badge b-done">Réalisé</span></div></div>
+        <div class="tl-row fade"><div class="tl-dot next">🗳</div><div class="tl-card next-card"><div class="tl-date">26 juin 2026</div><div class="tl-name">🎯 Jour du Congrès</div><div class="tl-desc">Congrès Extraordinaire (statuts) puis Congrès Ordinaire (rapport, élection, motion). 10h00 → 17h00 — Maison des syndicats, Paris.</div><span class="badge b-next">Prochain événement</span></div></div>
+      </div>
+    </div>
+  </section>
 
+  <!-- ===== ORDRE DU JOUR ===== -->
+  <section class="section" id="ordre-du-jour">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Programme</div>
+        <h2 class="section-title">Ordre du Jour</h2>
+        <p class="section-sub">Deux sessions : Congrès Extraordinaire (matin) puis Congrès Ordinaire (après-midi).</p>
+      </div>
       <div class="agenda-grid">
-        <!-- Congrès Extraordinaire -->
-        <div class="agenda-card animate-in" aria-label="Congrès Extraordinaire">
-          <div class="agenda-card-header extraordinary">
-            <div class="agenda-card-icon" aria-hidden="true">⚡</div>
-            <div>
-              <div class="agenda-card-title">Congrès Extraordinaire</div>
-              <div class="agenda-card-sub">Modification des Statuts</div>
-            </div>
+
+        <div class="agenda-card fade">
+          <div class="agenda-hd blue">
+            <div class="agenda-hd-icon">⚡</div>
+            <div><div class="agenda-hd-title">Congrès Extraordinaire</div><div class="agenda-hd-sub">Modification des Statuts · Matin</div></div>
           </div>
-          <ol class="agenda-items" role="list">
-            <li class="agenda-item">
-              <span class="agenda-num" aria-hidden="true">1</span>
-              <span class="agenda-text">Ouverture du Congrès extraordinaire et présentation des enjeux</span>
-            </li>
-            <li class="agenda-item">
-              <span class="agenda-num" aria-hidden="true">2</span>
-              <span class="agenda-text">Adoption de l'ordre du jour du Congrès</span>
-            </li>
-            <li class="agenda-item">
-              <span class="agenda-num" aria-hidden="true">3</span>
-              <span class="agenda-text">Élection de la Commission de vérification des mandats</span>
-            </li>
-            <li class="agenda-item">
-              <span class="agenda-num" aria-hidden="true">4</span>
-              <span class="agenda-text">Rapport de la Commission des mandats</span>
-            </li>
-            <li class="agenda-item">
-              <span class="agenda-num" aria-hidden="true">5</span>
-              <span class="agenda-text">Présentation du projet de modification des Statuts</span>
-            </li>
-            <li class="agenda-item">
-              <span class="agenda-num" aria-hidden="true">6</span>
-              <span class="agenda-text">Étude et vote des amendements éventuels</span>
-            </li>
-            <li class="agenda-item">
-              <span class="agenda-num" aria-hidden="true">7</span>
-              <span class="agenda-text">Vote sur l'adoption des nouveaux Statuts</span>
-            </li>
-            <li class="agenda-item">
-              <span class="agenda-num" aria-hidden="true">8</span>
-              <span class="agenda-text">Intervention Macif</span>
-            </li>
-            <li class="agenda-item">
-              <span class="agenda-num" aria-hidden="true">9</span>
-              <span class="agenda-text">Clôture du Congrès extraordinaire</span>
-            </li>
-          </ol>
+          <div class="agenda-body">
+            <div class="a-item"><span class="a-n bn">1</span><span class="a-text">Ouverture du Congrès Extraordinaire et présentation des enjeux</span></div>
+            <div class="a-item"><span class="a-n bn">2</span><span class="a-text">Adoption de l'ordre du jour du Congrès</span></div>
+            <div class="a-item"><span class="a-n bn">3</span><span class="a-text">Élection de la Commission de vérification des mandats</span></div>
+            <div class="a-item"><span class="a-n bn">4</span><span class="a-text">Rapport de la Commission des mandats</span></div>
+            <div class="a-item"><span class="a-n bn">5</span><span class="a-text">Présentation du projet de modification des Statuts</span></div>
+            <div class="a-item"><span class="a-n bn">6</span><span class="a-text">Étude et vote des amendements éventuels</span></div>
+            <div class="a-item"><span class="a-n bn">7</span><span class="a-text">Vote sur l'adoption des nouveaux Statuts</span></div>
+            <div class="a-item"><span class="a-n bn">8</span><span class="a-text">Intervention Macif</span></div>
+            <div class="a-item"><span class="a-n bn">9</span><span class="a-text">Clôture du Congrès Extraordinaire</span></div>
+          </div>
         </div>
 
-        <!-- Congrès Ordinaire -->
-        <div class="agenda-card animate-in" aria-label="Congrès Ordinaire">
-          <div class="agenda-card-header ordinary">
-            <div class="agenda-card-icon" aria-hidden="true">🏛️</div>
-            <div>
-              <div class="agenda-card-title">Congrès Ordinaire</div>
-              <div class="agenda-card-sub">Rapport, Élection, Motion</div>
-            </div>
+        <div class="agenda-card fade">
+          <div class="agenda-hd dark">
+            <div class="agenda-hd-icon">🏛️</div>
+            <div><div class="agenda-hd-title">Congrès Ordinaire</div><div class="agenda-hd-sub">Rapport, Élection, Motion · Après-midi</div></div>
           </div>
-          <ol class="agenda-items" role="list">
-            <li class="agenda-item">
-              <span class="agenda-num" aria-hidden="true">1</span>
-              <span class="agenda-text">Ouverture du Congrès Ordinaire</span>
-            </li>
-            <li class="agenda-item">
-              <span class="agenda-num" aria-hidden="true">2</span>
-              <span class="agenda-text">Introduction par l'URIF</span>
-            </li>
-            <li class="agenda-item">
-              <span class="agenda-num" aria-hidden="true">3</span>
-              <span class="agenda-text">Adoption de l'ordre du jour du Congrès Ordinaire</span>
-            </li>
-            <li class="agenda-item">
-              <span class="agenda-num" aria-hidden="true">4</span>
-              <span class="agenda-text">Rapport de la Commission de vérification des mandats</span>
-            </li>
-            <li class="agenda-item">
-              <span class="agenda-num" aria-hidden="true">5</span>
-              <span class="agenda-text">Présentation du rapport d'activité et vote</span>
-            </li>
-            <li class="agenda-item">
-              <span class="agenda-num" aria-hidden="true">6</span>
-              <span class="agenda-text">Présentation du rapport financier et vote</span>
-            </li>
-            <li class="agenda-item">
-              <span class="agenda-num" aria-hidden="true">7</span>
-              <span class="agenda-text">Présentation des candidats au Conseil départemental</span>
-            </li>
-            <li class="agenda-item">
-              <span class="agenda-num" aria-hidden="true">8</span>
-              <span class="agenda-text">Élection du Conseil</span>
-            </li>
-            <li class="agenda-item">
-              <span class="agenda-num" aria-hidden="true">9</span>
-              <span class="agenda-text">Vote pour la nouvelle Commission de vérification des comptes</span>
-            </li>
-            <li class="agenda-item">
-              <span class="agenda-num" aria-hidden="true">10</span>
-              <span class="agenda-text">Réunion du nouveau Conseil : élection des Dirigeants et des membres du Bureau</span>
-            </li>
-            <li class="agenda-item">
-              <span class="agenda-num" aria-hidden="true">11</span>
-              <span class="agenda-text">Proclamation des résultats</span>
-            </li>
-            <li class="agenda-item">
-              <span class="agenda-num" aria-hidden="true">12</span>
-              <span class="agenda-text">Présentation de la Motion d'orientation et vote</span>
-            </li>
-            <li class="agenda-item">
-              <span class="agenda-num" aria-hidden="true">13</span>
-              <span class="agenda-text">Intervention du représentant confédéral</span>
-            </li>
-            <li class="agenda-item">
-              <span class="agenda-num" aria-hidden="true">14</span>
-              <span class="agenda-text">Clôture du Congrès Ordinaire</span>
-            </li>
-          </ol>
+          <div class="agenda-body">
+            <div class="a-item"><span class="a-n dn">1</span><span class="a-text">Ouverture du Congrès Ordinaire</span></div>
+            <div class="a-item"><span class="a-n dn">2</span><span class="a-text">Introduction par l'URIF</span></div>
+            <div class="a-item"><span class="a-n dn">3</span><span class="a-text">Adoption de l'ordre du jour du Congrès Ordinaire</span></div>
+            <div class="a-item"><span class="a-n dn">4</span><span class="a-text">Rapport de la Commission de vérification des mandats</span></div>
+            <div class="a-item"><span class="a-n dn">5</span><span class="a-text">Présentation du rapport d'activité et vote</span></div>
+            <div class="a-item"><span class="a-n dn">6</span><span class="a-text">Présentation du rapport financier et vote</span></div>
+            <div class="a-item"><span class="a-n dn">7</span><span class="a-text">Présentation des candidats au Conseil départemental</span></div>
+            <div class="a-item"><span class="a-n dn">8</span><span class="a-text">Élection du Conseil</span></div>
+            <div class="a-item"><span class="a-n dn">9</span><span class="a-text">Vote pour la nouvelle Commission de vérification des comptes</span></div>
+            <div class="a-item"><span class="a-n dn">10</span><span class="a-text">Réunion du nouveau Conseil : élection des Dirigeants et membres du Bureau</span></div>
+            <div class="a-item"><span class="a-n dn">11</span><span class="a-text">Proclamation des résultats</span></div>
+            <div class="a-item"><span class="a-n dn">12</span><span class="a-text">Présentation de la Motion d'orientation et vote</span></div>
+            <div class="a-item"><span class="a-n dn">13</span><span class="a-text">Intervention du représentant confédéral</span></div>
+            <div class="a-item"><span class="a-n dn">14</span><span class="a-text">Clôture du Congrès Ordinaire</span></div>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ======== DOCUMENTS ======== -->
-  <section class="section section-alt" id="documents" aria-labelledby="docs-title">
+  <!-- ===== DOCUMENTS ===== -->
+  <section class="section section-alt" id="documents">
     <div class="container">
-      <div class="section-header">
-        <div class="section-eyebrow" aria-hidden="true">📄 Ressources</div>
-        <h2 class="section-title" id="docs-title">Documents à télécharger</h2>
-        <p class="section-desc">Tous les documents nécessaires à votre préparation et participation au congrès.</p>
+      <div class="section-head">
+        <div class="eyebrow">Ressources</div>
+        <h2 class="section-title">Documents à télécharger</h2>
+        <p class="section-sub">Tous les documents officiels du congrès mis à votre disposition.</p>
       </div>
-
       <div class="docs-grid">
-        <a href="documents/congres-convocation.pdf" class="doc-card animate-in" download aria-label="Télécharger la convocation au congrès (PDF)">
-          <div class="doc-icon" aria-hidden="true">📑</div>
-          <div class="doc-info">
-            <div class="doc-name">Convocation au Congrès</div>
-            <div class="doc-type">PDF · Document officiel</div>
-          </div>
-          <span class="doc-arrow" aria-hidden="true">↓</span>
-        </a>
-
-        <a href="documents/congres-RI.pdf" class="doc-card animate-in" download aria-label="Télécharger le règlement intérieur (PDF)">
-          <div class="doc-icon" aria-hidden="true">📋</div>
-          <div class="doc-info">
-            <div class="doc-name">Règlement Intérieur du Congrès</div>
-            <div class="doc-type">PDF · Règlement</div>
-          </div>
-          <span class="doc-arrow" aria-hidden="true">↓</span>
-        </a>
-
-        <a href="documents/statuts-actuels.pdf" class="doc-card animate-in" download aria-label="Télécharger les statuts applicables (PDF)">
-          <div class="doc-icon" aria-hidden="true">📜</div>
-          <div class="doc-info">
-            <div class="doc-name">Statuts applicables</div>
-            <div class="doc-type">PDF · Statuts en vigueur</div>
-          </div>
-          <span class="doc-arrow" aria-hidden="true">↓</span>
-        </a>
-
-        <a href="documents/projet-statuts.pdf" class="doc-card animate-in" download aria-label="Télécharger le projet de nouveaux statuts (PDF)">
-          <div class="doc-icon" aria-hidden="true">📝</div>
-          <div class="doc-info">
-            <div class="doc-name">Projet de nouveaux Statuts</div>
-            <div class="doc-type">PDF · Proposition soumise au vote</div>
-          </div>
-          <span class="doc-arrow" aria-hidden="true">↓</span>
-        </a>
-
-        <a href="documents/rapport-activite.pdf" class="doc-card animate-in" download aria-label="Télécharger le rapport d'activité (PDF)">
-          <div class="doc-icon" aria-hidden="true">📊</div>
-          <div class="doc-info">
-            <div class="doc-name">Rapport d'activité</div>
-            <div class="doc-type">PDF · Bilan de mandature</div>
-          </div>
-          <span class="doc-arrow" aria-hidden="true">↓</span>
-        </a>
-
-        <a href="documents/rapport-financier.pdf" class="doc-card animate-in" download aria-label="Télécharger le rapport financier (PDF)">
-          <div class="doc-icon" aria-hidden="true">💰</div>
-          <div class="doc-info">
-            <div class="doc-name">Rapport financier</div>
-            <div class="doc-type">PDF · Comptes de l'UD</div>
-          </div>
-          <span class="doc-arrow" aria-hidden="true">↓</span>
-        </a>
-
-        <a href="documents/motion-orientation.pdf" class="doc-card animate-in" download aria-label="Télécharger la motion d'orientation (PDF)">
-          <div class="doc-icon" aria-hidden="true">🎯</div>
-          <div class="doc-info">
-            <div class="doc-name">Motion d'orientation</div>
-            <div class="doc-type">PDF · Projet stratégique</div>
-          </div>
-          <span class="doc-arrow" aria-hidden="true">↓</span>
-        </a>
-
-        <a href="documents/inscription-congres.docx" class="doc-card animate-in" download aria-label="Télécharger le formulaire d'inscription (DOCX)">
-          <div class="doc-icon" style="background:#DBEAFE;" aria-hidden="true">📌</div>
-          <div class="doc-info">
-            <div class="doc-name">Inscription &amp; mandats des délégués</div>
-            <div class="doc-type">DOCX · Formulaire</div>
-          </div>
-          <span class="doc-arrow" aria-hidden="true">↓</span>
-        </a>
+        <a href="documents/congres-convocation.pdf"  class="doc-link fade" download><div class="d-icon red">📑</div><div><div class="d-name">Convocation au Congrès</div><div class="d-meta">PDF · Document officiel</div></div><span class="doc-arrow">↓</span></a>
+        <a href="documents/congres-RI.pdf"            class="doc-link fade" download><div class="d-icon blue">📋</div><div><div class="d-name">Règlement Intérieur</div><div class="d-meta">PDF · Règlement du congrès</div></div><span class="doc-arrow">↓</span></a>
+        <a href="documents/statuts-actuels.pdf"       class="doc-link fade" download><div class="d-icon red">📜</div><div><div class="d-name">Statuts applicables</div><div class="d-meta">PDF · En vigueur</div></div><span class="doc-arrow">↓</span></a>
+        <a href="documents/projet-statuts.pdf"        class="doc-link fade" download><div class="d-icon cyan">📝</div><div><div class="d-name">Projet de nouveaux Statuts</div><div class="d-meta">PDF · Soumis au vote</div></div><span class="doc-arrow">↓</span></a>
+        <a href="documents/rapport-activite.pdf"      class="doc-link fade" download><div class="d-icon green">📊</div><div><div class="d-name">Rapport d'activité</div><div class="d-meta">PDF · Bilan de mandature</div></div><span class="doc-arrow">↓</span></a>
+        <a href="documents/rapport-financier.pdf"     class="doc-link fade" download><div class="d-icon green">💰</div><div><div class="d-name">Rapport financier</div><div class="d-meta">PDF · Comptes de l'UD</div></div><span class="doc-arrow">↓</span></a>
+        <a href="documents/motion-orientation.pdf"    class="doc-link fade" download><div class="d-icon blue">🎯</div><div><div class="d-name">Motion d'orientation</div><div class="d-meta">PDF · Projet stratégique</div></div><span class="doc-arrow">↓</span></a>
+        <a href="documents/inscription-congres.docx"  class="doc-link fade" download><div class="d-icon cyan">📌</div><div><div class="d-name">Inscription &amp; mandats</div><div class="d-meta">DOCX · Formulaire délégués</div></div><span class="doc-arrow">↓</span></a>
       </div>
     </div>
   </section>
 
-  <!-- ======== PARTICIPANTS ======== -->
-  <section class="section" id="participants" aria-labelledby="participants-title">
+  <!-- ===== PARTICIPANTS ===== -->
+  <section class="section" id="participants">
     <div class="container">
-      <div class="section-header">
-        <div class="section-eyebrow" aria-hidden="true">👥 Présences</div>
-        <h2 class="section-title" id="participants-title">Participants &amp; Invités</h2>
-        <p class="section-desc">Les représentants mandatés ainsi que les personnalités invitées à ce congrès.</p>
+      <div class="section-head">
+        <div class="eyebrow">Présences</div>
+        <h2 class="section-title">Participants &amp; Invités</h2>
+        <p class="section-sub">Représentants mandatés et personnalités invitées au Congrès de l'UD 75.</p>
       </div>
-
-      <div class="participants-wrapper">
-        <!-- Participants -->
-        <div class="participants-group animate-in">
-          <div class="group-title">Participants officiels</div>
-
-          <div class="person-card">
-            <div class="person-avatar" aria-hidden="true">UD</div>
-            <div>
-              <div class="person-name">Délégués mandatés</div>
-              <div class="person-role">Représentants dûment mandatés des Syndicats de l'Union Départementale CFTC de Paris</div>
-            </div>
-          </div>
-
-          <div class="person-card">
-            <div class="person-avatar orange" aria-hidden="true">ML</div>
-            <div>
-              <div class="person-name">Manuel LECOMTE</div>
-              <div class="person-role">Tuteur de l'UD75</div>
-              <div class="person-org">Trésorier Confédéral · CFTC</div>
-            </div>
-          </div>
+      <div class="p-grid">
+        <div class="p-group fade">
+          <div class="p-group-hd">Participants officiels</div>
+          <div class="person"><div class="avatar av-b">UD</div><div><div class="p-name">Délégués mandatés</div><div class="p-role">Représentants dûment mandatés</div><div class="p-org">Syndicats de l'Union Départementale CFTC de Paris</div></div></div>
+          <div class="person"><div class="avatar av-c">ML</div><div><div class="p-name">Manuel LECOMTE</div><div class="p-role">Tuteur de l'UD 75</div><div class="p-org">Trésorier Confédéral · CFTC</div></div></div>
         </div>
-
-        <!-- Invités -->
-        <div class="participants-group animate-in">
-          <div class="group-title">Invités</div>
-
-          <div class="person-card">
-            <div class="person-avatar" aria-hidden="true">IH</div>
-            <div>
-              <div class="person-name">Imane HARRAOUI</div>
-              <div class="person-role">Secrétaire Générale Adjointe</div>
-              <div class="person-org">Confédération CFTC</div>
-            </div>
-          </div>
-
-          <div class="person-card">
-            <div class="person-avatar orange" aria-hidden="true">LD</div>
-            <div>
-              <div class="person-name">Louis DUVAUX</div>
-              <div class="person-role">Président</div>
-              <div class="person-org">Union Régionale Île-de-France (URIF)</div>
-            </div>
-          </div>
-
-          <div class="person-card">
-            <div class="person-avatar" aria-hidden="true">SD</div>
-            <div>
-              <div class="person-name">Sandra DEWELLE</div>
-              <div class="person-role">Secrétaire Générale</div>
-              <div class="person-org">Union Régionale Île-de-France (URIF)</div>
-            </div>
-          </div>
+        <div class="p-group fade">
+          <div class="p-group-hd">Invités</div>
+          <div class="person"><div class="avatar av-b">IH</div><div><div class="p-name">Imane HARRAOUI</div><div class="p-role">Secrétaire Générale Adjointe</div><div class="p-org">Confédération CFTC</div></div></div>
+          <div class="person"><div class="avatar av-c">LD</div><div><div class="p-name">Louis DUVAUX</div><div class="p-role">Président</div><div class="p-org">Union Régionale Île-de-France (URIF)</div></div></div>
+          <div class="person"><div class="avatar av-b">SD</div><div><div class="p-name">Sandra DEWELLE</div><div class="p-role">Secrétaire Générale</div><div class="p-org">Union Régionale Île-de-France (URIF)</div></div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ======== CONTACT ======== -->
-  <section class="section section-alt" id="contact" aria-labelledby="contact-title">
+  <!-- ===== CONTACT ===== -->
+  <section class="section section-alt" id="contact">
     <div class="container">
-      <div class="section-header">
-        <div class="section-eyebrow" aria-hidden="true">✉️ Nous écrire</div>
-        <h2 class="section-title" id="contact-title">Contact Organisation</h2>
-        <p class="section-desc">Une question sur le congrès ? Contactez l'équipe d'organisation.</p>
+      <div class="section-head">
+        <div class="eyebrow">Nous écrire</div>
+        <h2 class="section-title">Contact Organisation</h2>
+        <p class="section-sub">Une question sur le congrès ? Contactez l'équipe d'organisation.</p>
       </div>
-
-      <div class="contact-wrapper">
-        <!-- Infos -->
-        <div class="contact-info-block">
-          <div class="contact-info-item animate-in">
-            <div class="contact-info-icon" aria-hidden="true">✉️</div>
-            <div class="contact-info-text">
-              <strong>Email</strong>
-              <span><a href="mailto:congresud75@cftc.fr" style="color:var(--blue-mid);">congresud75@cftc.fr</a></span>
-            </div>
-          </div>
-          <div class="contact-info-item animate-in">
-            <div class="contact-info-icon" aria-hidden="true">📍</div>
-            <div class="contact-info-text">
-              <strong>Adresse</strong>
-              <span>Maison des syndicats<br />26 rue Francis Combe<br />75000 Paris</span>
-            </div>
-          </div>
-          <div class="contact-info-item animate-in">
-            <div class="contact-info-icon" aria-hidden="true">🕙</div>
-            <div class="contact-info-text">
-              <strong>Horaires du congrès</strong>
-              <span>Vendredi 26 juin 2026<br />10h00 – 17h00</span>
-            </div>
-          </div>
-          <div class="contact-info-item animate-in">
-            <div class="contact-info-icon" aria-hidden="true">🌐</div>
-            <div class="contact-info-text">
-              <strong>Site confédéral</strong>
-              <span><a href="https://www.cftc.fr" target="_blank" rel="noopener" style="color:var(--blue-mid);">www.cftc.fr</a></span>
-            </div>
-          </div>
+      <div class="contact-grid">
+        <div class="c-info-list fade">
+          <div class="c-info"><div class="c-icon">✉️</div><div><div class="c-label">Email</div><div class="c-val"><a href="mailto:congresud75@cftc.fr">congresud75@cftc.fr</a></div></div></div>
+          <div class="c-info"><div class="c-icon">📍</div><div><div class="c-label">Adresse</div><div class="c-val">Maison des syndicats<br />26 rue Francis Combe — 75000 Paris</div></div></div>
+          <div class="c-info"><div class="c-icon">🕙</div><div><div class="c-label">Horaires</div><div class="c-val">Vendredi 26 juin 2026<br />10h00 – 17h00</div></div></div>
+          <div class="c-info"><div class="c-icon">🌐</div><div><div class="c-label">Sites officiels</div><div class="c-val"><a href="https://www.cftc.fr" target="_blank" rel="noopener">www.cftc.fr</a><br /><a href="https://www.cftc-idf.fr" target="_blank" rel="noopener">www.cftc-idf.fr</a></div></div></div>
         </div>
-
-        <!-- Formulaire -->
-        <div class="contact-form animate-in">
-          <form id="contact-form" novalidate aria-label="Formulaire de contact">
-            <div class="form-group">
-              <label class="form-label" for="name">Nom complet *</label>
-              <input class="form-input" type="text" id="name" name="name" placeholder="Prénom Nom" required autocomplete="name" />
+        <div class="form-box fade">
+          <div class="form-title">Envoyer un message</div>
+          <form id="contact-form">
+            <div class="f-row">
+              <div class="field"><label for="f-nom">Nom *</label><input type="text" id="f-nom" placeholder="Dupont" required /></div>
+              <div class="field"><label for="f-prenom">Prénom *</label><input type="text" id="f-prenom" placeholder="Jean" required /></div>
             </div>
-            <div class="form-group">
-              <label class="form-label" for="email">Adresse email *</label>
-              <input class="form-input" type="email" id="email" name="email" placeholder="prenom.nom@exemple.fr" required autocomplete="email" />
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="syndicat">Syndicat / Organisation</label>
-              <input class="form-input" type="text" id="syndicat" name="syndicat" placeholder="Votre syndicat ou organisation" />
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="sujet">Sujet *</label>
-              <select class="form-select" id="sujet" name="sujet" required>
-                <option value="">Choisir un sujet…</option>
+            <div class="field"><label for="f-email">Email *</label><input type="email" id="f-email" placeholder="jean.dupont@syndicat.fr" required /></div>
+            <div class="field"><label for="f-syndicat">Syndicat / Organisation</label><input type="text" id="f-syndicat" placeholder="Votre syndicat" /></div>
+            <div class="field"><label for="f-sujet">Sujet *</label>
+              <select id="f-sujet" required>
+                <option value="">Choisir…</option>
                 <option>Inscription / Mandat de délégué</option>
                 <option>Candidature au Conseil</option>
                 <option>Documents du congrès</option>
@@ -572,62 +764,139 @@
                 <option>Autre</option>
               </select>
             </div>
-            <div class="form-group">
-              <label class="form-label" for="message">Message *</label>
-              <textarea class="form-textarea" id="message" name="message" placeholder="Votre message…" required></textarea>
-            </div>
-            <button type="submit" class="form-submit">
-              Envoyer le message ✉️
-            </button>
+            <div class="field"><label for="f-msg">Message *</label><textarea id="f-msg" placeholder="Votre message…" required></textarea></div>
+            <button type="submit" class="form-submit">Envoyer le message</button>
           </form>
-
-          <div id="form-success" class="form-success" role="alert" aria-live="polite">
-            <div style="font-size:2.5rem; margin-bottom:0.75rem;">✅</div>
-            <div style="font-size:1.1rem; margin-bottom:0.5rem;">Message envoyé !</div>
-            <div style="font-size:0.875rem; color:var(--gray-text); font-weight:400;">
-              L'équipe d'organisation vous répondra dans les meilleurs délais à l'adresse indiquée.
-            </div>
+          <div id="form-success">
+            <div class="ico">✅</div>
+            <h3>Message envoyé !</h3>
+            <p>L'équipe d'organisation vous répondra à l'adresse indiquée dans les meilleurs délais.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ======== FOOTER ======== -->
-  <footer class="footer" role="contentinfo">
-    <div class="footer-container">
+  <div class="section-divider"></div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-inner">
       <div class="footer-grid">
         <div>
-          <div class="footer-brand-mark" aria-hidden="true">CFTC</div>
-          <p class="footer-desc">
-            Union Départementale CFTC de Paris (UD 75) — Syndicat constructif, ancré dans les valeurs du dialogue social et de la défense des droits des travailleurs.
-          </p>
+          <div class="footer-logo">
+            <!--
+              Logo footer version blanche — déposer logo-cftc-white.svg dans img/
+              Ex : <img class="footer-logo-img" src="img/logo-cftc-white.svg" alt="CFTC" />
+            -->
+            <img class="footer-logo-img" src="img/logo-cftc-white.svg" alt="CFTC"
+                 onerror="this.style.display='none'; document.getElementById('footer-logo-fallback').style.display='flex';" />
+            <div class="footer-logo-placeholder" id="footer-logo-fallback" style="display:none;">CFTC</div>
+            <div class="footer-logo-text">
+              CFTC Paris UD 75
+              <span>Union Départementale de Paris</span>
+            </div>
+          </div>
+          <p class="footer-desc">Syndicat constructif ancré dans les valeurs chrétiennes et humanistes. Implantée dans toutes les professions parisiennes, la CFTC défend les droits de tous les travailleurs.</p>
+          <p class="footer-baseline">La Vie à Défendre</p>
         </div>
         <div>
           <div class="footer-col-title">Navigation</div>
-          <nav aria-label="Navigation pied de page">
-            <a href="#accueil"      class="footer-link">Accueil</a>
-            <a href="#calendrier"   class="footer-link">Calendrier</a>
-            <a href="#ordre-du-jour" class="footer-link">Ordre du jour</a>
-            <a href="#documents"    class="footer-link">Documents</a>
-            <a href="#participants" class="footer-link">Participants</a>
-            <a href="#contact"      class="footer-link">Contact</a>
-          </nav>
+          <a href="#accueil"       class="f-link">Accueil</a>
+          <a href="#presentation"  class="f-link">Présentation</a>
+          <a href="#calendrier"    class="f-link">Calendrier</a>
+          <a href="#ordre-du-jour" class="f-link">Ordre du jour</a>
+          <a href="#documents"     class="f-link">Documents</a>
+          <a href="#participants"  class="f-link">Participants</a>
+          <a href="#contact"       class="f-link">Contact</a>
         </div>
         <div>
           <div class="footer-col-title">Ressources</div>
-          <a href="https://www.cftc.fr" class="footer-link" target="_blank" rel="noopener">CFTC nationale</a>
-          <a href="#documents" class="footer-link">Téléchargements</a>
-          <a href="mailto:congresud75@cftc.fr" class="footer-link">congresud75@cftc.fr</a>
+          <a href="https://www.cftc.fr"     class="f-link" target="_blank" rel="noopener">CFTC nationale</a>
+          <a href="https://www.cftc-idf.fr" class="f-link" target="_blank" rel="noopener">CFTC Île-de-France</a>
+          <a href="#documents"              class="f-link">Téléchargements</a>
+          <a href="mailto:congresud75@cftc.fr" class="f-link">congresud75@cftc.fr</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© 2026 CFTC Paris <span class="footer-orange">UD 75</span> — Congrès Union Départementale</span>
-        <span>Vendredi 26 juin 2026 · 10h00 – 17h00</span>
+        <span>© 2026 CFTC Paris <span class="fc">UD 75</span> — Congrès Union Départementale</span>
+        <span>Vendredi 26 juin 2026 · 10h00 – 17h00 · Paris</span>
       </div>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <div id="toast"></div>
+
+  <script>
+    // Navbar scroll
+    const nb = document.getElementById('navbar');
+    window.addEventListener('scroll', () => nb.classList.toggle('raised', window.scrollY > 50));
+
+    // Burger menu
+    const burger = document.getElementById('burger');
+    const links  = document.getElementById('nav-links');
+    burger.addEventListener('click', () => links.classList.toggle('open'));
+    document.addEventListener('click', e => { if (!burger.contains(e.target) && !links.contains(e.target)) links.classList.remove('open'); });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const t = document.querySelector(a.getAttribute('href'));
+        if (!t) return;
+        e.preventDefault();
+        window.scrollTo({ top: t.offsetTop - 82, behavior: 'smooth' });
+        links.classList.remove('open');
+      });
+    });
+
+    // Active nav link
+    const secs = document.querySelectorAll('section[id]');
+    const nls  = document.querySelectorAll('.nav-link[href^="#"]');
+    new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) nls.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id)); });
+    }, { rootMargin: '-40% 0px -55% 0px' }).observe && secs.forEach(s => new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) nls.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id)); });
+    }, { rootMargin: '-40% 0px -55% 0px' }).observe(s));
+
+    // Countdown
+    function tick() {
+      const d = new Date('2026-06-26T10:00:00') - new Date();
+      if (d <= 0) { ['cd-d','cd-h','cd-m','cd-s'].forEach(i => document.getElementById(i).textContent = '00'); return; }
+      const p = n => String(n).padStart(2,'0');
+      document.getElementById('cd-d').textContent = p(Math.floor(d/86400000));
+      document.getElementById('cd-h').textContent = p(Math.floor(d%86400000/3600000));
+      document.getElementById('cd-m').textContent = p(Math.floor(d%3600000/60000));
+      document.getElementById('cd-s').textContent = p(Math.floor(d%60000/1000));
+    }
+    tick(); setInterval(tick, 1000);
+
+    // Scroll animations
+    new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('in'), i * 80); } });
+    }, { threshold: 0.1 }).observe && document.querySelectorAll('.fade').forEach(el =>
+      new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); } }); }, { threshold: 0.1 }).observe(el)
+    );
+
+    // Video — remplacer VIDEO_ID par l'identifiant YouTube de votre vidéo
+    function loadVideo() {
+      const VIDEO_ID = 'VIDEO_ID_ICI';
+      document.getElementById('video-container').innerHTML = `<iframe src="https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1&rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+    }
+
+    // Formulaire
+    document.getElementById('contact-form').addEventListener('submit', e => {
+      e.preventDefault();
+      const btn = e.target.querySelector('.form-submit');
+      btn.textContent = 'Envoi en cours…'; btn.disabled = true;
+      setTimeout(() => {
+        e.target.style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+        const t = document.getElementById('toast');
+        t.textContent = '✅ Message envoyé avec succès !';
+        t.classList.add('show');
+        setTimeout(() => t.classList.remove('show'), 3500);
+      }, 1200);
+    });
+  </script>
 </body>
 </html>
