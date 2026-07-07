@@ -91,7 +91,7 @@
 
     /* =============================================
        LOGO CFTC OFFICIEL
-       Chemin : documents/logo_cftc.svg
+       Chemin : logo/logo-cftc.svg et logo/logo-cftc-white.svg
        Zone de protection : 5 mm minimum
        Taille minimum : 18-20 mm
     ============================================= */
@@ -180,34 +180,10 @@
     }
     .navbar.raised { box-shadow: var(--shadow-md); }
 
-    .nav-inner 
-    {
-      <a href="/" class="cftc-logo" aria-label="CFTC Paris UD 75">
-  <!-- Logo SVG (fichier attendu : documents/logo_cftc.svg) -->
-  <img id="site-logo" src="documents/logo_cftc.svg" alt="Logo CFTC Paris UD 75" />
-
-  <!-- fallback text/logo (sera affiché si le SVG n'est pas trouvé) -->
-  <div class="logo-fallback" style="display:none; height:52px; align-items:center; font-family:'Oswald',sans-serif; font-weight:700; color:var(--cftc-blue);">
-    CFTC Paris
-  </div>
-
-  <!-- texte du logo (optionnel selon votre design) -->
-  <div class="cftc-logo-text">
-    <span class="syndicat">Union Départementale</span>
-    <span class="cftc-name">CFTC Paris</span>
-    <span class="baseline">UD 75</span>
-  </div>
-</a>
-
-<script>
-  // Affiche la fallback si le SVG ne se charge pas
-  document.getElementById('site-logo').addEventListener('error', function () {
-    this.style.display = 'none';
-    var fb = document.querySelector('.logo-fallback');
-    if (fb) fb.style.display = 'flex';
-  });
-</script>
-      
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      padding: 0 1.5rem; height: 80px;
+      display: flex; align-items: center; gap: 1.5rem;
     }
 
     .nav-title {
@@ -1039,8 +1015,8 @@
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
       <a href="#accueil" class="cftc-logo" aria-label="CFTC — La Vie à Défendre">
-        <!-- LOGO CFTC OFFICIEL — Chemin : documents/logo_cftc.svg -->
-        <img src="documents/logo_cftc.svg" alt="CFTC — La Vie à Défendre" 
+        <!-- LOGO CFTC OFFICIEL — Chemin : logo/logo-cftc.svg -->
+        <img src="logo/logo-cftc.svg" alt="CFTC — La Vie à Défendre" 
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
         <!-- Fallback SVG si le fichier n'est pas trouvé -->
         <svg class="logo-fallback" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:none;">
@@ -1369,7 +1345,7 @@
           <div class="email-signature">
             <div class="email-signature-title">✦ Signature email officielle</div>
             <div class="email-sig-content">
-              <img class="email-sig-logo" src="documents/logo_cftc.svg" alt="CFTC" 
+              <img class="email-sig-logo" src="logo/logo-cftc.svg" alt="CFTC" 
                    onerror="this.style.display='none';" />
               <div class="email-sig-text">
                 <div class="email-sig-name">Prénom NOM</div>
@@ -1423,8 +1399,8 @@
       <div class="footer-grid">
         <div>
           <a href="#accueil" class="cftc-logo on-dark" aria-label="CFTC — La Vie à Défendre">
-            <!-- LOGO CFTC (filtre CSS blanc automatique) — Chemin : documents/logo_cftc.svg -->
-            <img src="documents/logo_cftc.svg" alt="CFTC — La Vie à Défendre" 
+            <!-- LOGO CFTC VERSION BLANCHE — Chemin : logo/logo-cftc-white.svg -->
+            <img src="logo/logo-cftc-white.svg" alt="CFTC — La Vie à Défendre" 
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
             <!-- Fallback SVG si le fichier blanc n'est pas trouvé -->
             <svg class="logo-fallback" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:none;">
