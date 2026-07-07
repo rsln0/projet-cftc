@@ -180,10 +180,34 @@
     }
     .navbar.raised { box-shadow: var(--shadow-md); }
 
-    .nav-inner {
-      max-width: 1200px; margin: 0 auto;
-      padding: 0 1.5rem; height: 80px;
-      display: flex; align-items: center; gap: 1.5rem;
+    .nav-inner 
+    {
+      <a href="/" class="cftc-logo" aria-label="CFTC Paris UD 75">
+  <!-- Logo SVG (fichier attendu : documents/logo_cftc.svg) -->
+  <img id="site-logo" src="documents/logo_cftc.svg" alt="Logo CFTC Paris UD 75" />
+
+  <!-- fallback text/logo (sera affiché si le SVG n'est pas trouvé) -->
+  <div class="logo-fallback" style="display:none; height:52px; align-items:center; font-family:'Oswald',sans-serif; font-weight:700; color:var(--cftc-blue);">
+    CFTC Paris
+  </div>
+
+  <!-- texte du logo (optionnel selon votre design) -->
+  <div class="cftc-logo-text">
+    <span class="syndicat">Union Départementale</span>
+    <span class="cftc-name">CFTC Paris</span>
+    <span class="baseline">UD 75</span>
+  </div>
+</a>
+
+<script>
+  // Affiche la fallback si le SVG ne se charge pas
+  document.getElementById('site-logo').addEventListener('error', function () {
+    this.style.display = 'none';
+    var fb = document.querySelector('.logo-fallback');
+    if (fb) fb.style.display = 'flex';
+  });
+</script>
+      
     }
 
     .nav-title {
