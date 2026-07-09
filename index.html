@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Congrès 2026 — CFTC Paris UD 75</title>
-  <meta name="description" content="Congrès de l'Union Départementale CFTC de Paris — 26 juin 2026." />
+  <title>Congrès 2027 — CFTC Paris UD 75</title>
+  <meta name="description" content="Congrès de l'Union Départementale CFTC de Paris — 23 mars 2027." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <!-- Polices officielles CFTC : Oswald (titres) + Lato (corps) + Playfair Display (titres éditoriaux) -->
@@ -91,7 +91,8 @@
 
     /* =============================================
        LOGO CFTC OFFICIEL
-       Chemin : logo/logo-cftc.svg et logo/logo-cftc-white.svg
+       Chemin : logo_cftc.svg (fichier unique du dépôt GitHub, converti
+       en blanc via le filtre CSS .on-dark pour le footer)
        Zone de protection : 5 mm minimum
        Taille minimum : 18-20 mm
     ============================================= */
@@ -600,15 +601,29 @@
       background: white; box-shadow: var(--shadow-sm);
     }
     .tl-dot.done { border: 3px solid var(--cftc-blue); color: var(--cftc-blue); }
+    .tl-dot.todo { border: 3px solid var(--gray-border); color: var(--gray-text); }
     .tl-dot.next { 
       border: 3px solid var(--cftc-cyan); color: var(--cftc-cyan-dk); 
       background: var(--light-cyan); 
       box-shadow: 0 0 0 6px rgba(1,178,192,0.12); 
     }
+    /* Pastille dédiée au Jour du Congrès (toujours mise en valeur) */
+    .tl-dot.jour-j-dot {
+      border: 3px solid var(--cftc-violet); color: var(--cftc-violet);
+      background: var(--light-vio);
+      box-shadow: 0 0 0 6px rgba(149,27,129,0.14);
+      font-size: 1.1rem;
+    }
 
     .tl-card { flex: 1; background: white; border-radius: var(--r-lg); padding: 1.1rem 1.5rem; border: 1px solid var(--gray-border); box-shadow: var(--shadow-sm); transition: var(--ease); }
     .tl-card:hover { transform: translateX(4px); box-shadow: var(--shadow-md); }
     .tl-card.next-card { border-left: 4px solid var(--cftc-cyan); }
+    /* Carte du Jour du Congrès : toujours mise en avant, qu'elle soit passée ou à venir */
+    .tl-card.jour-j-card {
+      border: 2px solid var(--cftc-violet);
+      background: linear-gradient(135deg, var(--light-vio) 0%, white 55%);
+      box-shadow: var(--shadow-md);
+    }
 
     .tl-date { 
       font-family: 'Lato', sans-serif; 
@@ -616,6 +631,7 @@
       letter-spacing: 0.1em; text-transform: uppercase; 
       color: var(--cftc-blue); margin-bottom: 0.15rem; 
     }
+    .tl-card.jour-j-card .tl-date { color: var(--cftc-violet); }
     .tl-name { 
       font-family: 'Oswald', sans-serif; 
       font-size: 1rem; font-weight: 600; 
@@ -626,15 +642,18 @@
       color: var(--gray-text); 
       font-weight: 300;
     }
+    .tl-badges { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.5rem; }
     .badge { 
-      display: inline-block; margin-top: 0.5rem; 
+      display: inline-block; 
       padding: 0.18rem 0.65rem; border-radius: 50px; 
       font-family: 'Lato', sans-serif; 
       font-size: 0.67rem; font-weight: 700; 
       letter-spacing: 0.07em; text-transform: uppercase; 
     }
     .b-done { background: #DCFCE7; color: #15803D; }
+    .b-todo { background: var(--light-blue); color: var(--cftc-blue); }
     .b-next { background: var(--light-cyan); color: var(--cftc-cyan-dk); }
+    .b-jour-j { background: var(--cftc-violet); color: white; }
 
     /* =============================================
        ORDRE DU JOUR
@@ -1015,8 +1034,8 @@
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
       <a href="#accueil" class="cftc-logo" aria-label="CFTC — La Vie à Défendre">
-        <!-- LOGO CFTC OFFICIEL — Chemin : logo/logo-cftc.svg -->
-        <img src="logo/logo-cftc.svg" alt="CFTC — La Vie à Défendre" 
+        <!-- LOGO CFTC OFFICIEL — Chemin : logo_cftc.svg (dépôt GitHub) -->
+        <img src="logo_cftc.svg" alt="CFTC — La Vie à Défendre" 
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
         <!-- Fallback SVG si le fichier n'est pas trouvé -->
         <svg class="logo-fallback" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:none;">
@@ -1032,7 +1051,7 @@
 
       <div class="nav-title">
         CFTC Paris UD 75
-        <span>Congrès 2026 · Union Départementale</span>
+        <span>Congrès 2027 · Union Départementale</span>
       </div>
 
       <ul class="nav-links" id="nav-links">
@@ -1056,14 +1075,14 @@
       <div>
         <div class="hero-label"><span class="hero-label-dot"></span>Événement officiel · CFTC Paris UD 75</div>
         <h1 class="hero-title">
-          <span class="line-small">Congrès 2026</span>
+          <span class="line-small">Congrès 2027</span>
           Union<br />
           <span class="line-blue">Départementale</span><br />
           Paris UD&nbsp;75
         </h1>
         <div class="cftc-underline"></div>
         <div class="hero-date-block">
-          <div class="hero-date-main">Vendredi 26 juin 2026</div>
+          <div class="hero-date-main">Mardi 23 mars 2027</div>
           <div class="hero-date-sep"></div>
           <div class="hero-date-detail">10h00 – 17h00 · Maison des syndicats, Paris</div>
         </div>
@@ -1214,14 +1233,136 @@
         <h2 class="section-title">Calendrier du Congrès</h2>
         <p class="section-sub">Toutes les étapes menant au congrès de l'Union Départementale CFTC de Paris.</p>
       </div>
-      <div class="tl">
-        <div class="tl-row fade"><div class="tl-dot done">✓</div><div class="tl-card"><div class="tl-date">26 février 2026</div><div class="tl-name">Convocations &amp; ordre du jour</div><div class="tl-desc">Communication de la date du congrès à toutes les structures syndicales.</div><span class="badge b-done">Réalisé</span></div></div>
-        <div class="tl-row fade"><div class="tl-dot done">✓</div><div class="tl-card"><div class="tl-date">26 avril 2026</div><div class="tl-name">Arrêté des parts mensuelles</div><div class="tl-desc">Calcul du nombre de délégués et des droits de vote par syndicat.</div><span class="badge b-done">Réalisé</span></div></div>
-        <div class="tl-row fade"><div class="tl-dot done">✓</div><div class="tl-card"><div class="tl-date">27 avril 2026</div><div class="tl-name">Envoi des documents du congrès</div><div class="tl-desc">Diffusion des documents nécessaires et du lien vers ce site.</div><span class="badge b-done">Réalisé</span></div></div>
-        <div class="tl-row fade"><div class="tl-dot done">✓</div><div class="tl-card"><div class="tl-date">26 mai 2026</div><div class="tl-name">Clôture des candidatures &amp; mandats</div><div class="tl-desc">Date limite de réception des mandats de délégués et candidatures au Conseil.</div><span class="badge b-done">Réalisé</span></div></div>
-        <div class="tl-row fade"><div class="tl-dot done">✓</div><div class="tl-card"><div class="tl-date">10 juin 2026</div><div class="tl-name">Clôture des demandes d'intervention</div><div class="tl-desc">Date limite des demandes d'intervention et délégations de pouvoir.</div><span class="badge b-done">Réalisé</span></div></div>
-        <div class="tl-row fade"><div class="tl-dot done">✓</div><div class="tl-card"><div class="tl-date">12 juin 2026</div><div class="tl-name">Communication des candidatures</div><div class="tl-desc">Publication officielle des candidatures au Conseil départemental.</div><span class="badge b-done">Réalisé</span></div></div>
-        <div class="tl-row fade"><div class="tl-dot next">🗳</div><div class="tl-card next-card"><div class="tl-date">26 juin 2026</div><div class="tl-name">🎯 Jour du Congrès</div><div class="tl-desc">Congrès Extraordinaire (statuts) puis Congrès Ordinaire (rapport, élection, motion). 10h00 → 17h00 — Maison des syndicats, Paris.</div><span class="badge b-next">Prochain événement</span></div></div>
+      <div class="tl" id="tl-calendrier">
+        <div class="tl-row fade" data-date="2026-09-23">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-date">J - 6 mois · 23 septembre 2026</div>
+            <div class="tl-name">Validation de la date et réservation de la salle</div>
+            <div class="tl-desc">Responsable : Président / Secrétaire Général</div>
+            <div class="tl-badges"><span class="badge status-badge"></span></div>
+          </div>
+        </div>
+        <div class="tl-row fade" data-date="2026-10-23">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-date">J - 5 mois · 23 octobre 2026</div>
+            <div class="tl-name">Élaboration du budget prévisionnel</div>
+            <div class="tl-desc">Responsable : Trésorier</div>
+            <div class="tl-badges"><span class="badge status-badge"></span></div>
+          </div>
+        </div>
+        <div class="tl-row fade" data-date="2026-11-23">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-date">J - 4 mois · 23 novembre 2026</div>
+            <div class="tl-name">Mise à jour des listes de syndicats et adhérents</div>
+            <div class="tl-desc">Responsable : Secrétaire Général</div>
+            <div class="tl-badges"><span class="badge status-badge"></span></div>
+          </div>
+        </div>
+        <div class="tl-row fade" data-date="2026-12-23">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-date">J - 3 mois · 23 décembre 2026</div>
+            <div class="tl-name">Lancement de l'appel à candidatures</div>
+            <div class="tl-desc">Responsable : Commission électorale</div>
+            <div class="tl-badges"><span class="badge status-badge"></span></div>
+          </div>
+        </div>
+        <div class="tl-row fade" data-date="2027-01-23">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-date">J - 2 mois · 23 janvier 2027</div>
+            <div class="tl-name">Préparation des rapports moral, d'activité et financier</div>
+            <div class="tl-desc">Responsable : Bureau de l'UD</div>
+            <div class="tl-badges"><span class="badge status-badge"></span></div>
+          </div>
+        </div>
+        <div class="tl-row fade" data-date="2027-02-06">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-date">J - 45 jours · 6 février 2027</div>
+            <div class="tl-name">Envoi des convocations officielles</div>
+            <div class="tl-desc">Responsable : Secrétaire Général</div>
+            <div class="tl-badges"><span class="badge status-badge"></span></div>
+          </div>
+        </div>
+        <div class="tl-row fade" data-date="2027-02-21">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-date">J - 30 jours · 21 février 2027</div>
+            <div class="tl-name">Clôture des candidatures</div>
+            <div class="tl-desc">Responsable : Commission électorale</div>
+            <div class="tl-badges"><span class="badge status-badge"></span></div>
+          </div>
+        </div>
+        <div class="tl-row fade" data-date="2027-03-02">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-date">J - 21 jours · 2 mars 2027</div>
+            <div class="tl-name">Réunion de la Commission des mandats</div>
+            <div class="tl-desc">Responsable : Commission des mandats</div>
+            <div class="tl-badges"><span class="badge status-badge"></span></div>
+          </div>
+        </div>
+        <div class="tl-row fade" data-date="2027-03-08">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-date">J - 15 jours · 8 mars 2027</div>
+            <div class="tl-name">Diffusion du dossier complet du Congrès</div>
+            <div class="tl-desc">Responsable : Secrétaire Général</div>
+            <div class="tl-badges"><span class="badge status-badge"></span></div>
+          </div>
+        </div>
+        <div class="tl-row fade" data-date="2027-03-16">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-date">J - 7 jours · 16 mars 2027</div>
+            <div class="tl-name">Vérification des pouvoirs et émargements</div>
+            <div class="tl-desc">Responsable : Commission des mandats</div>
+            <div class="tl-badges"><span class="badge status-badge"></span></div>
+          </div>
+        </div>
+        <div class="tl-row fade" data-date="2027-03-22">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-date">J - 1 jour · 22 mars 2027</div>
+            <div class="tl-name">Installation logistique et matériel de vote</div>
+            <div class="tl-desc">Responsable : Équipe organisation</div>
+            <div class="tl-badges"><span class="badge status-badge"></span></div>
+          </div>
+        </div>
+        <div class="tl-row fade jour-j" data-date="2027-03-23">
+          <div class="tl-dot jour-j-dot"></div>
+          <div class="tl-card jour-j-card">
+            <div class="tl-date">Jour J · 23 mars 2027</div>
+            <div class="tl-name">🎯 Congrès UD 75 — débats, votes, élections</div>
+            <div class="tl-desc">Responsable : Tous · Maison des syndicats, Paris</div>
+            <div class="tl-badges">
+              <span class="badge b-jour-j">🎯 Jour du Congrès</span>
+              <span class="badge status-badge"></span>
+            </div>
+          </div>
+        </div>
+        <div class="tl-row fade" data-date="2027-03-30">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-date">J + 7 jours · 30 mars 2027</div>
+            <div class="tl-name">Rédaction et validation du procès-verbal</div>
+            <div class="tl-desc">Responsable : Secrétaire Général</div>
+            <div class="tl-badges"><span class="badge status-badge"></span></div>
+          </div>
+        </div>
+        <div class="tl-row fade" data-date="2027-04-22">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-date">J + 30 jours · 22 avril 2027</div>
+            <div class="tl-name">Déclarations administratives et communication des résultats</div>
+            <div class="tl-desc">Formalités de clôture du Congrès</div>
+            <div class="tl-badges"><span class="badge status-badge"></span></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1338,14 +1479,14 @@
         <div class="c-info-list fade">
           <div class="c-info"><div class="c-icon">✉️</div><div><div class="c-label">Email</div><div class="c-val"><a href="mailto:congresud75@cftc.fr">congresud75@cftc.fr</a></div></div></div>
           <div class="c-info"><div class="c-icon">📍</div><div><div class="c-label">Adresse</div><div class="c-val">Maison des syndicats<br />26 rue Francis Combe — 75000 Paris</div></div></div>
-          <div class="c-info"><div class="c-icon">🕙</div><div><div class="c-label">Horaires</div><div class="c-val">Vendredi 26 juin 2026<br />10h00 – 17h00</div></div></div>
+          <div class="c-info"><div class="c-icon">🕙</div><div><div class="c-label">Horaires</div><div class="c-val">Mardi 23 mars 2027<br />10h00 – 17h00</div></div></div>
           <div class="c-info"><div class="c-icon">🌐</div><div><div class="c-label">Sites officiels</div><div class="c-val"><a href="https://www.cftc.fr" target="_blank" rel="noopener">www.cftc.fr</a><br /><a href="https://www.cftc-idf.fr" target="_blank" rel="noopener">www.cftc-idf.fr</a></div></div></div>
 
           <!-- Signature email officielle CFTC (conforme charte p.26) -->
           <div class="email-signature">
             <div class="email-signature-title">✦ Signature email officielle</div>
             <div class="email-sig-content">
-              <img class="email-sig-logo" src="logo/logo-cftc.svg" alt="CFTC" 
+              <img class="email-sig-logo" src="logo_cftc.svg" alt="CFTC" 
                    onerror="this.style.display='none';" />
               <div class="email-sig-text">
                 <div class="email-sig-name">Prénom NOM</div>
@@ -1399,8 +1540,8 @@
       <div class="footer-grid">
         <div>
           <a href="#accueil" class="cftc-logo on-dark" aria-label="CFTC — La Vie à Défendre">
-            <!-- LOGO CFTC VERSION BLANCHE — Chemin : logo/logo-cftc-white.svg -->
-            <img src="logo/logo-cftc-white.svg" alt="CFTC — La Vie à Défendre" 
+            <!-- LOGO CFTC — Chemin : logo_cftc.svg (dépôt GitHub) ; passe en blanc via le filtre CSS .on-dark -->
+            <img src="logo_cftc.svg" alt="CFTC — La Vie à Défendre" 
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
             <!-- Fallback SVG si le fichier blanc n'est pas trouvé -->
             <svg class="logo-fallback" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:none;">
@@ -1444,7 +1585,7 @@
 
       <div class="footer-bottom">
         <span>© 2026 CFTC Paris <span class="fc">UD 75</span> — Congrès Union Départementale</span>
-        <span>Vendredi 26 juin 2026 · 10h00 – 17h00 · Paris</span>
+        <span>Mardi 23 mars 2027 · 10h00 – 17h00 · Paris</span>
       </div>
     </div>
   </footer>
@@ -1482,7 +1623,7 @@
 
     // Countdown
     function tick() {
-      const d = new Date('2026-06-26T10:00:00') - new Date();
+      const d = new Date('2027-03-23T10:00:00') - new Date();
       if (d <= 0) { ['cd-d','cd-h','cd-m','cd-s'].forEach(i => document.getElementById(i).textContent = '00'); return; }
       const p = n => String(n).padStart(2,'0');
       document.getElementById('cd-d').textContent = p(Math.floor(d/86400000));
@@ -1491,6 +1632,34 @@
       document.getElementById('cd-s').textContent = p(Math.floor(d%60000/1000));
     }
     tick(); setInterval(tick, 1000);
+
+    // Calendrier : statut "Réalisé" / "À venir" calculé automatiquement selon la date du jour
+    function updateCalendrier() {
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+
+      document.querySelectorAll('#tl-calendrier .tl-row').forEach(row => {
+        const eventDate = new Date(row.dataset.date + 'T00:00:00');
+        const isJourJ   = row.classList.contains('jour-j');
+        const isPast    = eventDate < today;
+
+        const dot   = row.querySelector('.tl-dot');
+        const badge = row.querySelector('.status-badge');
+
+        if (isJourJ) {
+          dot.textContent = isPast ? '✓' : '🎯';
+        } else {
+          dot.textContent = isPast ? '✓' : '';
+          dot.classList.toggle('done', isPast);
+          dot.classList.toggle('todo', !isPast);
+        }
+
+        badge.textContent = isPast ? 'Réalisé' : 'À venir';
+        badge.classList.toggle('b-done', isPast);
+        badge.classList.toggle('b-todo', !isPast);
+      });
+    }
+    updateCalendrier();
 
     // Scroll animations
     document.querySelectorAll('.fade').forEach(el =>
