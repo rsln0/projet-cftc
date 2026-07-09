@@ -1,45 +1,34 @@
-# 🏛️ Congrès CFTC Paris UD 75 — 26 juin 2026
+# 🏛️ Congrès CFTC Paris UD 75 — 23 mars 2027
 
 Site officiel du congrès de l'Union Départementale CFTC de Paris.
 
 ## 📁 Structure du projet
 
 ```
-cftc-paris-ud75/
+projet-cftc/
 ├── index.html          ← Page principale
-├── css/
-│   └── style.css       ← Styles
-├── js/
-│   └── main.js         ← Scripts (countdown, form, animations)
-├── documents/          ← Déposer les PDF ici
-│   ├── congres-convocation.pdf
-│   ├── congres-RI.pdf
-│   ├── statuts-actuels.pdf
-│   ├── projet-statuts.pdf
-│   ├── rapport-activite.pdf
-│   ├── rapport-financier.pdf
-│   ├── motion-orientation.pdf
-│   └── inscription-congres.docx
+├── logo_cftc.svg       ← Logo officiel CFTC
+├── UD-75-blanc.svg     ← Logo UD 75 version blanche
+├── documents/          ← Dossier pour les PDF
+│   └── (à remplir avec les documents)
 └── README.md
 ```
 
 ## 🚀 Déploiement sur GitHub Pages
 
-1. Créer un repo GitHub (ex : `congres-ud75-2026`)
-2. Pousser tous les fichiers :
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit — site congrès UD75 2026"
-   git remote add origin https://github.com/TON_USER/congres-ud75-2026.git
-   git push -u origin main
-   ```
-3. Aller dans **Settings → Pages → Source → main branch → / (root)**
-4. Le site sera disponible à : `https://TON_USER.github.io/congres-ud75-2026/`
+1. Les paramètres GitHub Pages sont déjà configurés
+2. Le site est accessible à : https://rsln0.github.io/projet-cftc/
 
-## 📄 Ajouter les vrais documents PDF
+## 📄 Ajouter les documents PDF
 
-Placer les fichiers PDF officiels dans le dossier `documents/` en respectant les noms ci-dessus. Le site les proposera automatiquement en téléchargement.
+Placer les fichiers PDF officiels dans le dossier `documents/` :
+- Convocation du congrès
+- Rapports d'activité
+- Projets de statuts
+- Motions et résolutions
+- Formulaires d'inscription
+
+Le site les proposera automatiquement en téléchargement.
 
 ## 📧 Formulaire de contact
 
@@ -53,10 +42,10 @@ Pour l'activer réellement, connecter un service comme **Formspree** :
 
 ## 🛠️ Personnalisation rapide
 
-- **Couleurs** : modifier les variables CSS dans `css/style.css` (`:root { ... }`)
-- **Adresse** : rechercher "26 rue Francis Combe" dans `index.html`
+- **Couleurs** : modifier les variables CSS dans `index.html` (section `:root { ... }`)
+- **Adresse** : rechercher dans `index.html`
 - **Email** : rechercher "congresud75@cftc.fr"
-- **Date** : le compte à rebours pointe automatiquement sur le 26/06/2026
+- **Date** : le compte à rebours pointe sur le 23/03/2027
 
 ---
-*Site réalisé pour la CFTC Paris UD 75 — 2026*
+*Site réalisé pour la CFTC Paris UD 75 — 2027*
